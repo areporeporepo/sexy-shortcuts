@@ -1,6 +1,6 @@
 # shortcuts just become sexy
 
-Awesome-repo style for shorcuts colelction
+Awesome-repo style for shorcuts collection
 
 > ⚠️ **Requires iOS 27 · macOS 27 · watchOS 27**. The developer beta is available now — install it to use these shortcuts.
 
