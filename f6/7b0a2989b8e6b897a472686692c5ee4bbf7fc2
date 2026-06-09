@@ -1,0 +1,74 @@
+requirements.txt
+  s_c605094134b65f::t_7e5379c3be63bd 1-2
+shortcuts/show-clipboard/meta.yml
+  s_c605094134b65f::t_4933071d6ae0a4 1-8
+tests/test_build_readme.py
+  s_c605094134b65f::t_6456618b2c590f 1-31
+README.md
+  s_c605094134b65f::t_4933071d6ae0a4 1-9
+tests/test_scan.py
+  s_c605094134b65f::t_267b0ac11870be 1-42
+.github/ISSUE_TEMPLATE/submit-shortcut.yml
+  s_c605094134b65f::t_ac7279a028abce 1-6,12-13,18-22,25-26
+  s_c605094134b65f::t_1a791df52b0a24 7-11,14-17,23-24,27-30
+.github/workflows/mirror.yml
+  s_c605094134b65f::t_a0b2821b823433 1-19
+tests/fixtures/red_shell.plist
+  s_c605094134b65f::t_ff1bca8738a632 1-15
+scripts/build_readme.py
+  s_c605094134b65f::t_71795f13e308a5 1-72
+tests/test_vet_pr.py
+  s_c605094134b65f::t_ed3bcb3490f98b 1-23
+scripts/reelkit.py
+  s_c605094134b65f::t_483818be30a1da 1-41
+.github/workflows/index.yml
+  s_c605094134b65f::t_229303c4fdd478 1-22
+tests/fixtures/yellow_contacts.plist
+  s_c605094134b65f::t_95157e505f2cf3 1-15
+scripts/risk_rules.yml
+  s_c605094134b65f::t_c1101bce19820e 1-47
+tests/fixtures/green_text.plist
+  s_c605094134b65f::t_b416dc183aa9f5 1-21
+scripts/decompile.py
+  s_c605094134b65f::t_ff16c46730ac41 1-55
+tests/test_reelkit.py
+  s_c605094134b65f::t_6d7e81f4986bfd 1-30
+.github/workflows/vet.yml
+  s_c605094134b65f::t_19ac709a3f6ecf 1-14
+tests/test_decompile.py
+  s_c605094134b65f::t_cbd582daa7026c 1-39
+pytest.ini
+  s_c605094134b65f::t_7e5379c3be63bd 1-5
+shortcuts/show-clipboard/SAFETY.md
+  s_c605094134b65f::t_4933071d6ae0a4 1-8
+CONTRIBUTING.md
+  s_c605094134b65f::t_aa54740bd55647 1-24
+.gitignore
+  s_c605094134b65f::t_c98de0f941b8a7 4
+docs/why-shortcuts.md
+  s_c605094134b65f::t_d2fc634cd90926 1-54
+shortcuts/show-clipboard/shortcut.plist
+  s_c605094134b65f::t_4933071d6ae0a4 1-21
+shortcuts/show-clipboard/scan.json
+  s_c605094134b65f::t_4933071d6ae0a4 1-13
+scripts/vet_pr.py
+  s_c605094134b65f::t_9e43d1db6d9747 1-36
+scripts/scan.py
+  s_c605094134b65f::t_714010b6ea3175 1-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f67b0a2989b8e6b897a472686692c5ee4bbf7fc2",
+  "prompts": {},
+  "sessions": {
+    "s_c605094134b65f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "347e7bc1-aa66-4bb4-884b-198a4aa57b43",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "anh nguyen <anh.nqqq@icloud.com>"
+    }
+  }
+}
