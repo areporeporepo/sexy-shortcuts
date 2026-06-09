@@ -1,0 +1,29 @@
+shortcuts/pi-morning-driver/scan.json
+  s_c605094134b65f::t_fb688c94646f14 1-31
+shortcuts/pi-morning-driver/SAFETY.md
+  s_c605094134b65f::t_22387cb5836234 1-11
+shortcuts/pi-morning-driver/shortcut.plist
+  s_c605094134b65f::t_18b44e38ff8153 1-82
+scripts/risk_rules.yml
+  s_c605094134b65f::t_a46033c6b1b4a2 84-95
+README.md
+  s_c605094134b65f::t_22387cb5836234 11
+shortcuts/pi-morning-driver/meta.yml
+  s_c605094134b65f::t_bbf0988cad3b23 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "defbf915312685e744473e637d1bfe7027c784a9",
+  "prompts": {},
+  "sessions": {
+    "s_c605094134b65f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "347e7bc1-aa66-4bb4-884b-198a4aa57b43",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "anh nguyen <anh.nqqq@icloud.com>"
+    }
+  }
+}
