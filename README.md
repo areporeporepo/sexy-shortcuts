@@ -1,4 +1,4 @@
-# awesome-shortcuts
+# sexy-shortcuts
 
 > ⚠️ **Requires iOS 27 · macOS 27 · watchOS 27** (the 2026 releases). The developer beta is available now — install it to use these shortcuts.
 
