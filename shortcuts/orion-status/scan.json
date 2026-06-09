@@ -1,0 +1,19 @@
+{
+  "score": 60,
+  "tier": "yellow",
+  "badge": "yellow",
+  "findings": [
+    {
+      "id": "is.workflow.actions.downloadurl",
+      "tier": "yellow",
+      "weight": 20,
+      "reason": "Sends a network request / downloads from a URL \u2014 possible exfiltration."
+    },
+    {
+      "id": "is.workflow.actions.downloadurl",
+      "tier": "yellow",
+      "weight": 20,
+      "reason": "Sends a network request / downloads from a URL \u2014 possible exfiltration."
+    }
+  ]
+}
