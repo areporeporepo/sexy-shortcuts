@@ -1,0 +1,31 @@
+shortcuts/usage-coach/shortcut.plist
+  s_c605094134b65f::t_164ebd5e480221 1-85
+shortcuts/usage-coach/meta.yml
+  s_c605094134b65f::t_d5f3513eb95d5c 1-9
+shortcuts/usage-coach/scan.json
+  s_c605094134b65f::t_268ea8aacb8889 1-19
+README.md
+  s_c605094134b65f::t_0ebae32db157fb 1,3,22
+shortcuts/usage-coach/prompt.md
+  s_c605094134b65f::t_0ebae32db157fb 1-18
+scripts/risk_rules.yml
+  s_c605094134b65f::t_6e7bdcaa8f8e4e 120-123
+shortcuts/usage-coach/SAFETY.md
+  s_c605094134b65f::t_0ebae32db157fb 1-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "486b961059485fbbfb936451f816f67e81c616ee",
+  "prompts": {},
+  "sessions": {
+    "s_c605094134b65f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "347e7bc1-aa66-4bb4-884b-198a4aa57b43",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "anh nguyen <anh.nqqq@icloud.com>"
+    }
+  }
+}
