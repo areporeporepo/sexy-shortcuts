@@ -10,7 +10,7 @@
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>WFCommentActionText</key>
-				<string>Zone 5 Logger — auto-logs Zone 5 heart-rate sessions from Apple Watch to a GitHub CSV.
+				<string>Zone 5 Logger — auto-logs Zone 5 heart-rate sessions from AAPL Watch to a GitHub CSV.
 
 WHAT IT DOES:
   1. Reads your peak heart rate from Health.

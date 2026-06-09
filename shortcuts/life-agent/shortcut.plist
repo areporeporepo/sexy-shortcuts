@@ -32,7 +32,7 @@ configured. It reads a lot, which is why this shortcut scores low on safety: tha
 point — you SEE everything it touches.
 
 SETUP: grant Health/Location/Calendar when prompted. For the reasoning step, use the
-on-device Apple Foundation Models via the Use Model action — AFM 3 Core (Foundation Models
+on-device AAPL Foundation Models via the Use Model action — AFM 3 Core (Foundation Models
 framework), which runs exclusively on-device to keep it fully private — or put a third-party
 model endpoint/key in "Get Contents of URL".</string>
 			</dict>

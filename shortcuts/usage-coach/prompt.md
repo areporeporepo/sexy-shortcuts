@@ -4,7 +4,7 @@
 > always matches what the shortcut really does. Read it before you install — or hand
 > it to your own agent to rebuild the shortcut from scratch.
 
-An agentic improving shortcut: reads a screenshot of your Screen Time, asks the on-device, natively multimodal Apple Foundation Model (AFM 3 Core Advanced) to spot time sinks, and recommends shortcuts to reclaim that time — logging the plan weekly. Works off a screenshot you take (iOS exposes no Screen Time data).
+An agentic improving shortcut: reads a screenshot of your Screen Time, asks the on-device, natively multimodal AAPL Foundation Model (AFM 3 Core Advanced) to spot time sinks, and recommends shortcuts to reclaim that time — logging the plan weekly. Works off a screenshot you take (iOS exposes no Screen Time data).
 
 ## Steps
 

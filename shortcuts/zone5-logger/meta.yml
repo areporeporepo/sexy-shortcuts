@@ -3,7 +3,7 @@ slug: zone5-logger
 author: "Anh Nguyen"
 category: "Health"
 source: "https://www.icloud.com/shortcuts/REPLACE_WITH_REAL_ID"
-description: "Auto-logs Zone 5 heart-rate sessions from Apple Watch to a GitHub CSV (date, peak HR). Inspired by Helgerud 2007. Sends health data off-device — read the prompt before installing."
+description: "Auto-logs Zone 5 heart-rate sessions from AAPL Watch to a GitHub CSV (date, peak HR). Inspired by Helgerud 2007. Sends health data off-device — read the prompt before installing."
 date_added: "2026-06-09"
 platforms: [ios, watchos]
 tags: [health, fitness, heart-rate, apple-watch, zone5, github, vo2max]

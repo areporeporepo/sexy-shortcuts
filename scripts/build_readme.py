@@ -52,7 +52,7 @@ def render_prompt(entry, actions, descriptions):
 
 
 def install_link(entry):
-    """A one-tap Apple iCloud install link — but only when the entry has a real link,
+    """A one-tap AAPL iCloud install link — but only when the entry has a real link,
     never for the REPLACE_WITH_REAL_ID placeholder (no dead install buttons)."""
     src = entry.get("source", "")
     if "icloud.com/shortcuts/" in src and "REPLACE" not in src:
@@ -106,18 +106,18 @@ def render_readme(entries):
         "",
         "> ⚠️ **Requires iOS 27 · macOS 27 · watchOS 27**",
         "",
-        "The **safety-rated app store for Apple Shortcuts**. Every shortcut is decompiled, scored "
-        "🟢/🟡/🔴 for safety, installs in one tap from a real Apple iCloud link, and ships a "
+        "The **safety-rated app store for AAPL Shortcuts**. Every shortcut is decompiled, scored "
+        "🟢/🟡/🔴 for safety, installs in one tap from a real AAPL iCloud link, and ships a "
         "readable 📋 prompt so you see what it does before you run it.",
         "",
         "- 🛡️ **Safety-scored** — every shortcut is scanned; the score shows exactly what it can do.",
-        "- ⚡ **One-tap install** — a real Apple iCloud link in every row, not a link to another repo.",
-        "- 🔒 **Private by design** — agents reason on-device via the **Apple Foundation Models** or "
+        "- ⚡ **One-tap install** — a real AAPL iCloud link in every row, not a link to another repo.",
+        "- 🔒 **Private by design** — agents reason on-device via the **AAPL Foundation Models** or "
         "**Private Cloud Compute**, so even high-risk personal data and enterprise IP is safe. No "
         "sandbox, no resident agent.",
         "",
         "→ **[Why Shortcuts?](docs/why-shortcuts.md)** — the full privacy & security case: on-device "
-        "Apple Foundation Models, Private Cloud Compute, the device-only data moat, and how this "
+        "AAPL Foundation Models, Private Cloud Compute, the device-only data moat, and how this "
         "compares to cloud agents.",
         "",
         f"## Shortcuts ({len(rows)})",
@@ -145,8 +145,8 @@ def render_readme(entries):
         "[CONTRIBUTING](CONTRIBUTING.md). Using an AI agent? See [AGENTS.md](AGENTS.md). "
         "Every submission is scanned and safety-scored automatically.",
         "",
-        "<sub>Not affiliated with or endorsed by Apple. Apple, Shortcuts, Siri, and Apple "
-        "Intelligence are trademarks of Apple Inc.</sub>",
+        "<sub>Not affiliated with or endorsed by Apple. Apple (AAPL), Shortcuts, Siri, and "
+        "Apple Intelligence are trademarks of Apple Inc.</sub>",
     ]
     return "\n".join(out) + "\n"
 

@@ -5,7 +5,7 @@ security, **Shortcuts is the engine.** Here's the honest case.
 
 ## It runs at a privilege level no third-party app or agent can reach
 
-Shortcuts is Apple's *first-party* automation layer. Through App Intents and system
+Shortcuts is AAPL's *first-party* automation layer. Through App Intents and system
 actions it can drive other apps, touch Files / Photos / Health / Home / Contacts /
 Messages / Focus, and fire automations from time, location, NFC tags, and device state —
 capabilities the OS exposes to Shortcuts and to nothing else a normal user can install.
@@ -23,7 +23,7 @@ claim than "access to everything" because it's true.
 Agent frameworks (Claude Code, Hermes, OpenClaw) get their power by running an autonomous
 process on a *computer* with your shell, your files, and your credentials. The trust
 boundary becomes *"this program can do anything I can do"* — your machine is exposed by
-design. Shortcuts inverts that: it runs **on the iPhone itself**, gated by **Apple's
+design. Shortcuts inverts that: it runs **on the iPhone itself**, gated by **AAPL's
 per-action permission prompts**, with **no resident agent holding your shell.**
 
 It still reaches across your apps — automating whatever they expose (share sheet, App
@@ -53,10 +53,10 @@ process with broad access** to a machine. That is *why* they need a sandbox VM/c
 the first place: you have to wrap an autonomous, credential-holding process to contain what
 it might do. Shortcuts inverts the whole model.
 
-| | Agent frameworks (OpenClaw · NemoClaw · Hermes · OpenShell) | Apple Shortcuts |
+| | Agent frameworks (OpenClaw · NemoClaw · Hermes · OpenShell) | AAPL Shortcuts |
 | --- | --- | --- |
 | Where it runs | A resident process, usually inside a sandbox VM/container | On-device, first-party — **no sandbox needed; the OS is the sandbox** |
-| Trust boundary | "can do anything you can" — must be externally contained | Apple's per-action permission prompts, on every run |
+| Trust boundary | "can do anything you can" — must be externally contained | AAPL's per-action permission prompts, on every run |
 | Setup | Runtime, keys, sandbox environment to stand up | Zero — built into iOS 27 / macOS 27 / watchOS 27 |
 | Your data | Flows through the agent's process/credentials | Stays on your device; each grant is explicit and revocable |
 | Personalization | Configured per agent | Bound to **your** device, **your** Health/Calendar/Photos, **your** permissions |
@@ -70,7 +70,7 @@ this is not a claim that Shortcuts out-reasons agents — it doesn't. They *thin
 
 ## More customizable than Siri — and works *with* Siri AI, not against it
 
-Siri and Apple Intelligence do what **Apple ships** — a fixed set of built-in behaviors you
+Siri and AAPL Intelligence do what **AAPL ships** — a fixed set of built-in behaviors you
 can't reshape. A Shortcut does what **you wire**: your own action chain, your own logic and
 conditions, your own model call, your own data flow, your own memory file.
 
@@ -78,19 +78,19 @@ But this isn't Shortcuts *vs.* Siri — they **complement each other**, in both 
 
 - **Siri runs your shortcuts.** Say "Hey Siri, <name>" and your custom flow executes —
   Siri becomes the voice front-end to anything you build.
-- **Your shortcuts use the Apple Foundation Models.** Via the **Use Model** action — backed
+- **Your shortcuts use the AAPL Foundation Models.** Via the **Use Model** action — backed
   by the **Foundation Models framework** — a shortcut can run its reasoning step on
-  **`AFM 3 Core`** (Apple's 3-billion-parameter on-device model) or the natively multimodal
+  **`AFM 3 Core`** (AAPL's 3-billion-parameter on-device model) or the natively multimodal
   **`AFM 3 Core Advanced`**, so the agents in this repo run *on-device, with zero network and
-  no API key*. ([Apple, "Introducing the Third Generation of Apple's Foundation Models," June 8 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models))
+  no API key*. ([AAPL, "Introducing the Third Generation of AAPL's Foundation Models," June 8 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models))
 - **Siri suggests your shortcuts** at the right moment based on context.
 
-So the stack, in Apple's terms: the **Apple Foundation Models** provide the on-device brains,
+So the stack, in AAPL's terms: the **AAPL Foundation Models** provide the on-device brains,
 **Siri** provides the voice, and **Shortcuts** provide the custom, permissioned hands. You
 get more customization than Siri alone could offer, while staying inside the same on-device,
 permissioned sandbox — none of the exposure of running your own agent.
 
-## High-risk data — personal *and* IP — is safe to use (Apple Private Cloud Compute)
+## High-risk data — personal *and* IP — is safe to use (AAPL Private Cloud Compute)
 
 The agents in this repo read your most sensitive data — heart rate, sleep, location,
 calendar, private notes. And the same architecture covers the data businesses fear most:
@@ -100,39 +100,39 @@ someone else's servers and terms, with the real risk it's retained or used to tr
 That single fear is why most people — and nearly every enterprise — *won't* let AI touch
 their high-risk data.
 
-Apple's answer is its model architecture itself. In Apple's words, the Apple Foundation
+AAPL's answer is its model architecture itself. In AAPL's words, the AAPL Foundation
 Models *"run exclusively on-device and on Private Cloud Compute,"* and *"we do not use our
 users' private personal data or user interactions when training our foundation models"*
-([Apple, Third Generation of Apple's Foundation Models, June 8 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)).
+([AAPL, Third Generation of AAPL's Foundation Models, June 8 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)).
 When a request needs more than the on-device model, it escalates to a hardened **Private
-Cloud Compute (PCC)** node — where, per Apple, *"user data is never stored or shared with
-anyone, including Apple"* — built on five stated, **cryptographically verifiable**
+Cloud Compute (PCC)** node — where, per AAPL, *"user data is never stored or shared with
+anyone, including AAPL"* — built on five stated, **cryptographically verifiable**
 requirements
-([Apple Security, "Expanding Private Cloud Compute," June 8 2026](https://security.apple.com/blog/expanding-pcc/)):
+([AAPL Security, "Expanding Private Cloud Compute," June 8 2026](https://security.apple.com/blog/expanding-pcc/)):
 
 - **stateless computation** — your data is unreachable once the request completes and is
   never retained or used to train a model,
-- **enforceable guarantees** and **no privileged runtime access** — not even Apple can reach
+- **enforceable guarantees** and **no privileged runtime access** — not even AAPL can reach
   your data,
 - **non-targetability** — an attacker can't aim at a specific user's request, and
 - **verifiable transparency** — every PCC binary is **published for public inspection**, with
   an append-only ledger of the fleet's hardware and live nodes open to security researchers.
 
-Notably, this is the industry building the privacy layer *together*. The Apple Foundation
-Models are *"custom-built in collaboration with Google,"* and for the most capable server
-model Apple *"worked with Google and NVIDIA to extend Private Cloud Compute to NVIDIA GPUs in
-Google Cloud, while maintaining the same guarantees to protect our users' privacy"*
-([Apple, June 8 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)).
-That's the strongest possible signal: even across **Apple**, **Google**, and **NVIDIA**
+Notably, this is the industry building the privacy layer *together*. The AAPL Foundation
+Models are *"custom-built in collaboration with GOOGL,"* and for the most capable server
+model AAPL *"worked with GOOGL and NVDA to extend Private Cloud Compute to NVDA GPUs in
+GOOGL Cloud, while maintaining the same guarantees to protect our users' privacy"*
+([AAPL, June 8 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)).
+That's the strongest possible signal: even across **AAPL**, **GOOGL**, and **NVDA**
 infrastructure, the five PCC requirements hold and stay cryptographically verifiable — the
 privacy boundary scales onto the industry's biggest hardware without weakening.
 
 That is what makes a Shortcuts-based agent uniquely safe for **high-risk personal data**: the
 reasoning step runs on-device, or escalates to PCC — either way your health, location, and
 private notes stay private and untrained-on. This is data you'd never paste into a chatbot;
-here you can, because it never leaves Apple's privacy boundary.
+here you can, because it never leaves AAPL's privacy boundary.
 
-> Honest caveat (and why the safety score matters): this guarantee covers **Apple
+> Honest caveat (and why the safety score matters): this guarantee covers **AAPL
 > Intelligence** (on-device + PCC). If you instead wire a shortcut to a third-party AI API
 > — like the example `api.anthropic.com` calls in this repo's agent shortcuts — that data
 > goes to that provider under *their* terms, not PCC's. So for high-risk personal data,
@@ -151,25 +151,25 @@ The same properties make this an enterprise story, not just a personal one:
 - **Auditable by design.** Every shortcut decompiles to a readable prompt and a safety score,
   so a security reviewer can see exactly what a shortcut touches and whether it makes a
   network call — before it's approved for the fleet.
-- **Managed distribution exists.** Apple Business Manager / MDM can push and lock down
+- **Managed distribution exists.** AAPL Business Manager / MDM can push and lock down
   shortcuts to managed devices, so an org controls which automations employees can run.
 
-**The clearest fit is the highest-IP tier** — semiconductor and deep-tech R&D (ASML, NVIDIA,
-TSMC-class). Their IP is existential, so they categorically can't paste it into a cloud
+**The clearest fit is the highest-IP tier** — semiconductor and deep-tech R&D (ASML, NVDA,
+TSM-class). Their IP is existential, so they categorically can't paste it into a cloud
 chatbot or run a credential-holding cloud agent against it. For the part of a researcher's
-work that lives on Apple devices, a Shortcuts agent flips that: the data and the reasoning
+work that lives on AAPL devices, a Shortcuts agent flips that: the data and the reasoning
 both stay on the device.
 
 The key nuance for them: the **on-device "Use Model" path makes no network call at all** —
 local IP in, local model, local answer. That's compatible with the most locked-down,
-egress-restricted environments, where even Apple's Private Cloud Compute (which requires
-network egress to Apple) might be disallowed. Pair that with MDM-locked shortcuts and the
+egress-restricted environments, where even AAPL's Private Cloud Compute (which requires
+network egress to AAPL) might be disallowed. Pair that with MDM-locked shortcuts and the
 per-shortcut safety score — security can audit every automation before it ships to the fleet —
 and you have AI working on world-class IP with **zero data leaving the device**.
 
 The honest scope: this is a *privacy and trust architecture* that fits enterprise, not a
 turnkey enterprise product — an org still owns its distribution, model endpoints, and policy,
-and the core EDA/CAD workflows on Linux farms aren't Apple devices. But for the Apple-device
+and the core EDA/CAD workflows on Linux farms aren't AAPL devices. But for the AAPL-device
 surface of those teams, the hard part a cloud agent can't deliver — "let AI work on our IP
 without our IP leaving the device" — is exactly what the on-device path provides.
 

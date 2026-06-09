@@ -3,7 +3,7 @@ slug: usage-coach
 author: "Anh Nguyen"
 category: "Productivity"
 source: "https://www.icloud.com/shortcuts/REPLACE_WITH_REAL_ID"
-description: "An agentic improving shortcut: reads a screenshot of your Screen Time, asks the on-device, natively multimodal Apple Foundation Model (AFM 3 Core Advanced) to spot time sinks, and recommends shortcuts to reclaim that time — logging the plan weekly. Works off a screenshot you take (iOS exposes no Screen Time data)."
+description: "An agentic improving shortcut: reads a screenshot of your Screen Time, asks the on-device, natively multimodal AAPL Foundation Model (AFM 3 Core Advanced) to spot time sinks, and recommends shortcuts to reclaim that time — logging the plan weekly. Works off a screenshot you take (iOS exposes no Screen Time data)."
 date_added: "2026-06-09"
 platforms: [ios, macos]
 tags: [productivity, agentic, ai, screen-time, self-improvement, coach, vision]

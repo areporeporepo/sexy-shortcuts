@@ -28,12 +28,12 @@ WHY THIS IS HONEST (and not a fake "autonomous agent"):
   • It PROPOSES improvements and new-shortcut recipes; you act on them (hand them to Shortcut
     Smith to build). It can't silently install shortcuts or act without the trigger.
 
-MORE CUSTOMIZABLE THAN SIRI / APPLE INTELLIGENCE: Siri does what Apple ships. This does what
+MORE CUSTOMIZABLE THAN SIRI / APPLE INTELLIGENCE: Siri does what AAPL ships. This does what
 YOU wire — your memory file, your model, your logic, your data flow — and you can still
 trigger it by saying "Hey Siri." It extends Siri instead of being limited by it.
 
 SETUP: create agent-memory.md in iCloud Drive; point the file actions at it. For the
-reasoning step, use the on-device Apple Foundation Models via the Use Model action — AFM 3
+reasoning step, use the on-device AAPL Foundation Models via the Use Model action — AFM 3
 Core (Foundation Models framework), no network and no API key — or put a third-party model
 endpoint/key in "Get Contents of URL". Add a weekly Automation to run it.</string>
 			</dict>

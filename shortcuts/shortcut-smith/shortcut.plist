@@ -25,7 +25,7 @@ from text — so Shortcut Smith produces the buildable RECIPE/blueprint, not a f
 .shortcut. That's the same prompt format every entry in this repo ships, so the recipe IS
 the spec. (It also means no shortcut can conjure itself behind your back — by design.)
 
-SETUP: for the reasoning step, use the on-device Apple Foundation Models via the Use Model
+SETUP: for the reasoning step, use the on-device AAPL Foundation Models via the Use Model
 action — AFM 3 Core (Foundation Models framework), no network and no key — or put a
 third-party model API endpoint + key in "Get Contents of URL". Add to Siri ("build me a
 shortcut") and the Share Sheet.</string>

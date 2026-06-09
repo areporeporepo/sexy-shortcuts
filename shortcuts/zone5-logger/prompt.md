@@ -4,7 +4,7 @@
 > always matches what the shortcut really does. Read it before you install — or hand
 > it to your own agent to rebuild the shortcut from scratch.
 
-Auto-logs Zone 5 heart-rate sessions from Apple Watch to a GitHub CSV (date, peak HR). Inspired by Helgerud 2007. Sends health data off-device — read the prompt before installing.
+Auto-logs Zone 5 heart-rate sessions from AAPL Watch to a GitHub CSV (date, peak HR). Inspired by Helgerud 2007. Sends health data off-device — read the prompt before installing.
 
 ## Steps
 
