@@ -1,0 +1,44 @@
+README.md
+  s_c605094134b65f::t_7406ceda17d05a 23,27
+docs/why-shortcuts.md
+  s_c605094134b65f::t_7be76f42e3e558 71-80
+shortcuts/self-improving-agent/shortcut.plist
+  s_c605094134b65f::t_365ee46af5ee74 1-83
+scripts/risk_rules.yml
+  s_c605094134b65f::t_693bcd5829593f 136-147
+  s_c605094134b65f::t_e8404523a34e20 124-135
+shortcuts/life-agent/scan.json
+  s_c605094134b65f::t_d8ebfd65645fa3 1-37
+shortcuts/self-improving-agent/scan.json
+  s_c605094134b65f::t_d8ebfd65645fa3 1-25
+shortcuts/self-improving-agent/SAFETY.md
+  s_c605094134b65f::t_7406ceda17d05a 1-10
+shortcuts/life-agent/prompt.md
+  s_c605094134b65f::t_7406ceda17d05a 1-21
+shortcuts/self-improving-agent/meta.yml
+  s_c605094134b65f::t_e579442e2a3922 1-9
+shortcuts/life-agent/meta.yml
+  s_c605094134b65f::t_7412e4b4e70082 1-9
+shortcuts/self-improving-agent/prompt.md
+  s_c605094134b65f::t_7406ceda17d05a 1-17
+shortcuts/life-agent/SAFETY.md
+  s_c605094134b65f::t_7406ceda17d05a 1-12
+shortcuts/life-agent/shortcut.plist
+  s_c605094134b65f::t_45c29429860d6e 1-114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "2fa1bd9f5e276578a7dede80641c521a699324be",
+  "prompts": {},
+  "sessions": {
+    "s_c605094134b65f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "347e7bc1-aa66-4bb4-884b-198a4aa57b43",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "anh nguyen <anh.nqqq@icloud.com>"
+    }
+  }
+}
