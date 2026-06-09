@@ -95,43 +95,23 @@ def render_readme(entries):
     out = [
         "# awesome-shortcuts",
         "",
-        "> ⚠️ **Requires iOS 27 · macOS 27 · watchOS 27** (the 2026 releases). "
-        "The developer beta is available now — install it to use these shortcuts.",
+        "> ⚠️ **Requires iOS 27 · macOS 27 · watchOS 27**",
         "",
-        "The safety-rated app store for Apple Shortcuts. Every shortcut is decompiled and",
-        "scored for safety — each score reflects what a shortcut *can do*, not proof of intent.",
+        "The **safety-rated app store for Apple Shortcuts**. Every shortcut is decompiled, scored "
+        "🟢/🟡/🔴 for safety, installs in one tap from a real Apple iCloud link, and ships a "
+        "readable 📋 prompt so you see what it does before you run it.",
         "",
-        "More private than running an agent: no resident process, no credentials to leak, "
-        "**no sandbox VM needed** (OpenClaw · NemoClaw · Hermes · OpenShell all require one) — "
-        "Shortcuts runs on-device behind Apple's permission prompts, so the OS *is* the sandbox.",
+        "- 🛡️ **Safety-scored** — every shortcut is scanned; the score shows exactly what it can do.",
+        "- ⚡ **One-tap install** — a real Apple iCloud link in every row, not a link to another repo.",
+        "- 🔒 **Private by design** — agents reason on-device via the **Apple Foundation Models** or "
+        "**Private Cloud Compute**, so even high-risk personal data and enterprise IP is safe. No "
+        "sandbox, no resident agent.",
         "",
-        "It works *with* Siri AI, not against it: **Siri** runs your shortcuts by voice, the "
-        "**Apple Foundation Models** (`AFM 3 Core`, via the Foundation Models framework) power "
-        "their reasoning on-device through the **Use Model** action, and you keep full custom control.",
-        "",
-        "Apple's models *\"run exclusively on-device and on Private Cloud Compute,\"* and Apple "
-        "*\"do not use users' private personal data or user interactions when training\"* them "
-        "([Apple, June 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)). "
-        "On Private Cloud Compute, *user data is never stored or shared with anyone, including Apple* — "
-        "*stateless computation, non-targetability, verifiable transparency* "
-        "([Apple Security, June 2026](https://security.apple.com/blog/expanding-pcc/)).",
-        "",
-        "This is the industry building privacy together: the Apple Foundation Models are "
-        "*\"custom-built in collaboration with **Google**,\"* and Apple *\"worked with **Google** and "
-        "**NVIDIA** to extend Private Cloud Compute to NVIDIA GPUs in Google Cloud, while maintaining "
-        "the same guarantees to protect our users' privacy\"* "
-        "([Apple, June 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)). "
-        "So even **high-risk data** (health, location, private notes, enterprise **IP**) is safe to "
-        "feed an agent here — same architecture, personal or enterprise. "
-        "See [Why Shortcuts?](docs/why-shortcuts.md) for the full privacy/security case.",
-        "",
-        "**Every entry installs in one tap from a real Apple iCloud link** — no clicking",
-        "through to another repo. Browse, check the safety score, tap Install.",
+        "→ **[Why Shortcuts?](docs/why-shortcuts.md)** — the full privacy & security case: on-device "
+        "Apple Foundation Models, Private Cloud Compute, the device-only data moat, and how this "
+        "compares to cloud agents.",
         "",
         "Runs on: 📱 iOS · 💻 macOS · ⌚ watchOS",
-        "",
-        "Each shortcut has a one-tap **Install** link *and* a 📋 **prompt** — a plain-English",
-        "recipe you can read before installing (or hand to your own agent to rebuild it).",
         "",
         "| Safety | Score | Shortcut | Install | Prompt | Category | Runs on | What it does |",
         "| :----: | :---: | -------- | :-----: | :----: | -------- | :-----: | ------------ |",
