@@ -1,3 +1,4 @@
+# awesome-shortcuts
 
 > ⚠️ **Requires iOS 27 · macOS 27 · watchOS 27**
 
