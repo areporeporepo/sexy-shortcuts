@@ -45,3 +45,31 @@ rules:
     tier: green
     weight: 0
     reason: "Shows a result on screen."
+  - id: is.workflow.actions.list
+    tier: green
+    weight: 0
+    reason: "Defines a static list of items."
+  - id: is.workflow.actions.getitemfromlist
+    tier: green
+    weight: 0
+    reason: "Picks an item from a list (device-local)."
+  - id: is.workflow.actions.alert
+    tier: green
+    weight: 0
+    reason: "Shows an on-screen alert."
+  - id: is.workflow.actions.shownotification
+    tier: green
+    weight: 0
+    reason: "Posts a local notification."
+  - id: is.workflow.actions.speaktext
+    tier: green
+    weight: 0
+    reason: "Speaks text aloud (device-local)."
+  - id: is.workflow.actions.choosefrommenu
+    tier: green
+    weight: 0
+    reason: "Shows a local menu to choose from."
+  - id: is.workflow.actions.comment
+    tier: green
+    weight: 0
+    reason: "A non-executing comment."

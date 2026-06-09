@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WFWorkflowActions</key>
+	<array>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.comment</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFCommentActionText</key>
+				<string>Hair Force One — summons a random iconic Craig Federighi line. 100% device-local, no network.</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.list</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFItems</key>
+				<array>
+					<dict>
+						<key>WFItemType</key>
+						<integer>0</integer>
+						<key>WFValue</key>
+						<dict>
+							<key>WFSerializationType</key>
+							<string>WFTextTokenString</string>
+							<key>Value</key>
+							<dict>
+								<key>string</key>
+								<string>"Can't innovate anymore, my ass." 🎤</string>
+								<key>attachmentsByRange</key>
+								<dict/>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>WFItemType</key>
+						<integer>0</integer>
+						<key>WFValue</key>
+						<dict>
+							<key>WFSerializationType</key>
+							<string>WFTextTokenString</string>
+							<key>Value</key>
+							<dict>
+								<key>string</key>
+								<string>Hair Force One, reporting for duty. ✈️🦱</string>
+								<key>attachmentsByRange</key>
+								<dict/>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>WFItemType</key>
+						<integer>0</integer>
+						<key>WFValue</key>
+						<dict>
+							<key>WFSerializationType</key>
+							<string>WFTextTokenString</string>
+							<key>Value</key>
+							<dict>
+								<key>string</key>
+								<string>It just works. (mostly. let me show you a demo.)</string>
+								<key>attachmentsByRange</key>
+								<dict/>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>WFItemType</key>
+						<integer>0</integer>
+						<key>WFValue</key>
+						<dict>
+							<key>WFSerializationType</key>
+							<string>WFTextTokenString</string>
+							<key>Value</key>
+							<dict>
+								<key>string</key>
+								<string>Good morning! ☀️ And yes — the hair is real.</string>
+								<key>attachmentsByRange</key>
+								<dict/>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>WFItemType</key>
+						<integer>0</integer>
+						<key>WFValue</key>
+						<dict>
+							<key>WFSerializationType</key>
+							<string>WFTextTokenString</string>
+							<key>Value</key>
+							<dict>
+								<key>string</key>
+								<string>Senior Vice President of Software Engineering… and vibes.</string>
+								<key>attachmentsByRange</key>
+								<dict/>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>WFItemType</key>
+						<integer>0</integer>
+						<key>WFValue</key>
+						<dict>
+							<key>WFSerializationType</key>
+							<string>WFTextTokenString</string>
+							<key>Value</key>
+							<dict>
+								<key>string</key>
+								<string>Craig.exe has entered the keynote. 🐻‍❄️</string>
+								<key>attachmentsByRange</key>
+								<dict/>
+							</dict>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getitemfromlist</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFItemSpecifier</key>
+				<string>Random Item</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.showresult</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict/>
+		</dict>
+	</array>
+</dict>
+</plist>
