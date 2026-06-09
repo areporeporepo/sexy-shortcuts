@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WFWorkflowActions</key>
+	<array>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.comment</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFCommentActionText</key>
+				<string>Life Agent — ONE personal agent that fuses the signals only Shortcuts can read.
+
+THE EDGE: a cloud agent (OpenClaw, Hermes, etc.) can read your files and shell — but it can
+read NONE of the things below. These are device-only and permissioned, and Shortcuts is the
+one sanctioned place a normal user can pull them all together:
+  • Health: latest heart rate, sleep, steps (HealthKit)
+  • Calendar: what's next today
+  • Location: where you are now
+  • Focus + battery: your current context and device state
+
+WHAT IT DOES:
+  1. Reads heart rate + today's events + location + Focus + battery.
+  2. Sends that context to a model: "Given my body, schedule, and context right now, what
+     are the 3 best things to do next?"
+  3. Shows the answer and logs it to a "Life Agent" note.
+
+HONEST BOUNDARY: every signal is read with YOUR explicit permission, on-device. The agent
+proposes — it doesn't act on your behalf or send data anywhere except the model call you
+configured. It reads a lot, which is why this shortcut scores low on safety: that's the
+point — you SEE everything it touches.
+
+SETUP: grant Health/Location/Calendar when prompted; put your model endpoint/key in "Get
+Contents of URL" (or use the on-device "Use Model" action on iOS 27 to keep it fully private).</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.gethealthsample</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFHealthSampleType</key>
+				<string>Heart Rate</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getupcomingevents</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFGetUpcomingItemCount</key>
+				<integer>3</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getcurrentlocation</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict/>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getcurrentfocus</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict/>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getbatterylevel</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict/>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.downloadurl</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFHTTPMethod</key>
+				<string>POST</string>
+				<key>WFURL</key>
+				<string>https://api.anthropic.com/v1/messages</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.showresult</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>Text</key>
+				<string>🧠 Given your body, schedule, and context right now — here's what to do next:</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.appendnote</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFNoteActionNote</key>
+				<string>Life Agent</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.shownotification</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFNotificationActionBody</key>
+				<string>🧠 Your Life Agent has a plan.</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

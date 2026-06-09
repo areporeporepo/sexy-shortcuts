@@ -1,0 +1,9 @@
+name: "Life Agent"
+slug: life-agent
+author: "Anh Nguyen"
+category: "Productivity"
+source: "https://www.icloud.com/shortcuts/REPLACE_WITH_REAL_ID"
+description: "One personal agent that fuses the signals only Shortcuts can read — heart rate, calendar, location, Focus, battery — and asks a model what to do next. A cloud agent can read none of these; this is the device-only moat. Reads a lot, so it scores low on purpose: you see everything it touches."
+date_added: "2026-06-09"
+platforms: [ios]
+tags: [productivity, agentic, ai, health, location, calendar, personal-agent, anthropic]

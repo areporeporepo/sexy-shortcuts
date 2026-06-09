@@ -1,0 +1,37 @@
+{
+  "score": 30,
+  "tier": "yellow",
+  "badge": "yellow",
+  "findings": [
+    {
+      "id": "is.workflow.actions.gethealthsample",
+      "tier": "yellow",
+      "weight": 15,
+      "reason": "Reads Health data (e.g. heart rate)."
+    },
+    {
+      "id": "is.workflow.actions.getupcomingevents",
+      "tier": "yellow",
+      "weight": 15,
+      "reason": "Reads your calendar events."
+    },
+    {
+      "id": "is.workflow.actions.getcurrentlocation",
+      "tier": "yellow",
+      "weight": 15,
+      "reason": "Reads your current location."
+    },
+    {
+      "id": "is.workflow.actions.getcurrentfocus",
+      "tier": "yellow",
+      "weight": 5,
+      "reason": "Reads your current Focus mode."
+    },
+    {
+      "id": "is.workflow.actions.downloadurl",
+      "tier": "yellow",
+      "weight": 20,
+      "reason": "Sends a network request / downloads from a URL \u2014 possible exfiltration."
+    }
+  ]
+}

@@ -121,3 +121,27 @@ rules:
     tier: yellow
     weight: 15
     reason: "Reads your most recent screenshot/photo."
+  - id: is.workflow.actions.documentpicker.open
+    tier: yellow
+    weight: 10
+    reason: "Reads a file from Files/iCloud Drive."
+  - id: is.workflow.actions.documentpicker.save
+    tier: yellow
+    weight: 5
+    reason: "Saves/overwrites a file in Files/iCloud Drive."
+  - id: is.workflow.actions.repeat.count
+    tier: green
+    weight: 0
+    reason: "Repeats steps a fixed number of times (control flow)."
+  - id: is.workflow.actions.getbatterylevel
+    tier: green
+    weight: 0
+    reason: "Reads the battery level (non-sensitive device state)."
+  - id: is.workflow.actions.getdevicedetails
+    tier: green
+    weight: 0
+    reason: "Reads device details (name, model, OS version)."
+  - id: is.workflow.actions.getcurrentfocus
+    tier: yellow
+    weight: 5
+    reason: "Reads your current Focus mode."
