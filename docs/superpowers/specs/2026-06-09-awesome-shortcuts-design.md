@@ -4,6 +4,49 @@
 **Status:** Approved (pending spec review)
 **Target platform:** iOS 27 / macOS (2026 release), Shortcuts.app current format
 
+## 0. Why Shortcuts? (opening pitch — also the README intro)
+
+If you want maximum automation leverage on your iPhone with maximum privacy and
+security, **Shortcuts is the engine.** Here's the honest case for why.
+
+**It runs at a privilege level no third-party app or agent can reach.** Shortcuts is
+Apple's *first-party* automation layer. Through App Intents and system actions it can
+drive other apps, touch Files / Photos / Health / Home / Contacts / Messages / Focus,
+and fire automations from time, location, NFC tags, and device state — capabilities the
+OS exposes to Shortcuts and to nothing else a normal user can install. A regular app
+lives in its own box; Shortcuts is the sanctioned bridge *between* the boxes.
+
+**Correction to a common claim:** Shortcuts does **not** have unrestricted access to "all
+files." No iOS app does — that's iOS sandboxing working as designed, and it's a feature,
+not a limitation. What Shortcuts *does* have is the **broadest sanctioned reach** available
+to a normal user: the full Files document tree (with your grant), system + cross-app
+actions via App Intents, and deep OS automation hooks. Breadth *inside* the sandbox — that
+is the point, and it's a stronger claim than "access to everything" because it's true.
+
+**This is where it beats agent frameworks on privacy and security.** Tools like Hermes,
+OpenClaw, and Claude Code are powerful, but they get that power by running an autonomous
+process on your machine with your shell, your files, and your credentials. The trust
+boundary becomes *"this program can do anything I can do."* Your machine is exposed by
+design. Shortcuts inverts that: it executes **on-device**, gated by **Apple's per-action
+permission prompts**, with **no resident agent holding your shell.** You get automation
+leverage without handing a program your whole computer. For a huge class of tasks —
+"every morning, pull X, transform it, send it to Y" — that is strictly the safer engine.
+
+**It replaces a lot.** A single shortcut can stand in for a pile of single-purpose
+utility apps and the risky one-off scripts people otherwise run with broad permissions.
+Fewer apps, fewer trackers, fewer processes with access to your stuff.
+
+**Why this repo, then.** Shortcuts' one residual risk is a shortcut that *abuses* the
+permissions you granted it — e.g. a "Run Shell Script" action on Mac, or a step that
+quietly POSTs your clipboard to some URL. That's precisely the gap this repo's automated
+**safety score** closes: every shortcut is decompiled and scanned so you can *see* what it
+can do before you run it. "Why Shortcuts" and "why a scored repo" are the same story — the
+safest automation engine, plus the missing trust layer on top of it.
+
+> Tone note for the README: confident but never overstated. Every privilege claim must
+> survive a power-user fact-check. We win the credibility fight by being *more* precise
+> than the competition, not louder.
+
 ## 1. Purpose & Goal
 
 A community GitHub repository that collects Apple Shortcuts from around the world,
