@@ -88,13 +88,15 @@ voice, and Shortcuts provide the custom, permissioned hands.** You get more cust
 than Siri alone could ever offer, while staying inside the same on-device, permissioned
 sandbox — none of the exposure of running your own agent.
 
-## High-risk personal data is safe to use — Apple Private Cloud Compute
+## High-risk data — personal *and* IP — is safe to use (Apple Private Cloud Compute)
 
 The agents in this repo read your most sensitive data — heart rate, sleep, location,
-calendar, your private notes. Hand that to a cloud agent or a third-party AI API and you're
-trusting someone else's servers and terms, with the real risk it's retained or used to train
-a model. That's the exact reason most people *won't* let AI touch their high-risk personal
-data.
+calendar, private notes. And the same architecture covers the data businesses fear most:
+**intellectual property** — source code, designs, contracts, customer records, trade
+secrets. Hand any of that to a cloud agent or a third-party AI API and you're trusting
+someone else's servers and terms, with the real risk it's retained or used to train a model.
+That single fear is why most people — and nearly every enterprise — *won't* let AI touch
+their high-risk data.
 
 Apple's answer — a centerpiece of Apple Intelligence's privacy story and reaffirmed at WWDC
 — is **Private Cloud Compute (PCC)**. When a request needs more than the on-device model, it
@@ -117,6 +119,26 @@ here you can, because it never leaves Apple's privacy boundary.
 > goes to that provider under *their* terms, not PCC's. So for high-risk personal data,
 > prefer the on-device **"Use Model"** action. The safety scanner flags every network call,
 > so you always know which path a shortcut takes before you run it.
+
+### Why this works for enterprise
+
+The same properties make this an enterprise story, not just a personal one:
+
+- **IP never leaves the boundary.** Reasoning runs on-device or in Private Cloud Compute —
+  no third-party model trains on your code, designs, or contracts.
+- **No agent runtime to secure.** There's no resident process, no sandbox VM, no credentials
+  sitting on a server to be breached — the attack surface a security team has to sign off on
+  is dramatically smaller than a cloud-agent deployment.
+- **Auditable by design.** Every shortcut decompiles to a readable prompt and a safety score,
+  so a security reviewer can see exactly what a shortcut touches and whether it makes a
+  network call — before it's approved for the fleet.
+- **Managed distribution exists.** Apple Business Manager / MDM can push and lock down
+  shortcuts to managed devices, so an org controls which automations employees can run.
+
+The honest scope: this is a *privacy and trust architecture* that fits enterprise, not a
+turnkey enterprise product — an org still owns its own distribution, model endpoints, and
+policy. But the hard part enterprises can't get from a cloud agent — "let AI work on our IP
+without our IP leaking" — is exactly what on-device + PCC provides.
 
 ## Why this repo
 
