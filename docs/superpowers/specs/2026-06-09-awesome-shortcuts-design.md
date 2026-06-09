@@ -43,9 +43,18 @@ quietly POSTs your clipboard to some URL. That's precisely the gap this repo's a
 can do before you run it. "Why Shortcuts" and "why a scored repo" are the same story — the
 safest automation engine, plus the missing trust layer on top of it.
 
+**Complementary, not a competitor — and it replaces *some* things.** Shortcuts is not an
+agent; it can't reason over a repo or do open-ended work, and we never claim it beats coding
+agents at their job. The right framing is two-layer: agents (Claude Code, etc.) *think and
+plan*; Shortcuts is the **safe, on-device execution layer** they — or you — hand fixed,
+permissioned actions to. Alongside that, a good shortcut outright **replaces** a pile of
+single-purpose utility apps and risky one-off scripts. So: complements your agents, replaces
+your junk apps. That positioning wins more users than "better than Claude Code" ever would.
+
 > Tone note for the README: confident but never overstated. Every privilege claim must
 > survive a power-user fact-check. We win the credibility fight by being *more* precise
-> than the competition, not louder.
+> than the competition, not louder. Frame Shortcuts as **complementary** to agents and a
+> **replacement** for utility-app sprawl — never as a rival to coding agents.
 
 ## 1. Purpose & Goal
 
