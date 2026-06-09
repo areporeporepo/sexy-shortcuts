@@ -1,0 +1,23 @@
+docs/superpowers/plans/2026-06-09-awesome-shortcuts.md
+  s_c605094134b65f::t_e2f4f5d7b84f91 1016-1084,1086-1120
+  s_c605094134b65f::t_114a29e76b772c 1085
+docs/superpowers/specs/2026-06-09-awesome-shortcuts-design.md
+  s_c605094134b65f::t_0bfb295e3456d3 82-86
+  s_c605094134b65f::t_a6abd3f75da1cb 256-269,274-275
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "4ee798512c7ef1cd43f43a6032134bfea017fa24",
+  "prompts": {},
+  "sessions": {
+    "s_c605094134b65f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "347e7bc1-aa66-4bb4-884b-198a4aa57b43",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "anh nguyen <anh.nqqq@icloud.com>"
+    }
+  }
+}
