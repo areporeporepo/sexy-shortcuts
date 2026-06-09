@@ -1,0 +1,29 @@
+scripts/risk_rules.yml
+  s_c605094134b65f::t_d80b4397856339 96-107
+shortcuts/self-improving-log/shortcut.plist
+  s_c605094134b65f::t_a570cd75598158 1-64
+README.md
+  s_c605094134b65f::t_54c6e24cee0989 14
+shortcuts/self-improving-log/SAFETY.md
+  s_c605094134b65f::t_54c6e24cee0989 1-7
+shortcuts/self-improving-log/meta.yml
+  s_c605094134b65f::t_cffca99a75a8b1 1-9
+shortcuts/self-improving-log/scan.json
+  s_c605094134b65f::t_4c04e6749d290d 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "efb053727f0d9b42c99e8a77edd4049552360756",
+  "prompts": {},
+  "sessions": {
+    "s_c605094134b65f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "347e7bc1-aa66-4bb4-884b-198a4aa57b43",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "anh nguyen <anh.nqqq@icloud.com>"
+    }
+  }
+}
