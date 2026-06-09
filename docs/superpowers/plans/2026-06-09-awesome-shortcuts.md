@@ -1013,6 +1013,111 @@ Expected: a recent `pushedAt` timestamp.
 
 ---
 
+### Task 13: reelkit.py — turn a shortcut into a ready-to-post content kit
+
+**Files:**
+- Create: `scripts/reelkit.py`
+- Test: `tests/test_reelkit.py`
+
+- [ ] **Step 1: Write the failing tests**
+
+`tests/test_reelkit.py`:
+```python
+from scripts.reelkit import build_kit
+
+ENTRY = {
+    "name": "Show Clipboard", "slug": "show-clipboard", "category": "Utilities",
+    "description": "Displays the current clipboard contents.",
+    "source": "https://www.icloud.com/shortcuts/abc123",
+    "scan": {"score": 85, "tier": "yellow", "badge": "yellow", "findings": []},
+}
+
+def test_kit_has_caption_badge_and_cta():
+    kit = build_kit(ENTRY)
+    assert "🟡" in kit["caption"]
+    assert "85/100" in kit["caption"]
+    assert "link in bio" in kit["caption"].lower()
+    assert ENTRY["source"] in kit["caption"]
+
+def test_kit_hashtags_include_core_and_category():
+    kit = build_kit(ENTRY)
+    tags = " ".join(kit["hashtags"]).lower()
+    assert "#shortcuts" in tags
+    assert "#utilities" in tags
+    assert all(t.startswith("#") for t in kit["hashtags"])
+
+def test_kit_overlay_has_three_beats():
+    kit = build_kit(ENTRY)
+    assert len(kit["overlay"]) == 3  # hook / payoff / cta
+    assert "Show Clipboard" in kit["overlay"][1]
+```
+
+- [ ] **Step 2: Run tests to verify they fail**
+
+Run: `python3 -m pytest tests/test_reelkit.py -v`
+Expected: FAIL with `ModuleNotFoundError: No module named 'scripts.reelkit'`
+
+- [ ] **Step 3: Implement reelkit.py**
+
+`scripts/reelkit.py`:
+```python
+"""Turn a shortcut entry (meta + scan) into a ready-to-post short-form video kit:
+caption, hashtags, and a 3-beat on-screen text overlay. Pure text — no APIs, no posting."""
+import json
+import sys
+from pathlib import Path
+
+import yaml
+
+BADGE = {"green": "🟢", "yellow": "🟡", "red": "🔴"}
+ROOT = Path(__file__).parents[1]
+
+
+def build_kit(entry):
+    s = entry["scan"]
+    badge = BADGE[s["badge"]]
+    caption = (
+        f"Stop downloading an app for this. 📱 {entry['name']} — {entry['description']}\n\n"
+        f"{badge} Safety score: {s['score']}/100 (we scan every shortcut so you don't get a virus).\n"
+        f"One tap to install — link in bio 👆 {entry['source']}"
+    )
+    hashtags = [
+        "#shortcuts", "#appleshortcuts", "#iphonetips", "#ios",
+        f"#{entry['category'].lower().replace(' ', '')}", "#iphonehacks", "#productivity",
+    ]
+    overlay = [
+        "POV: you stop paying for an app that does THIS 👇",
+        f"{entry['name']}: {entry['description']}",
+        f"{badge} {s['score']}/100 safe • one tap to install • link in bio",
+    ]
+    return {"caption": caption, "hashtags": hashtags, "overlay": overlay}
+
+
+def _load_entry(slug):  # pragma: no cover - filesystem glue
+    d = ROOT / "shortcuts" / slug
+    entry = yaml.safe_load((d / "meta.yml").read_text())
+    entry["scan"] = json.loads((d / "scan.json").read_text())
+    return entry
+
+
+if __name__ == "__main__":  # pragma: no cover - CLI glue
+    print(json.dumps(build_kit(_load_entry(sys.argv[1])), ensure_ascii=False, indent=2))
+```
+
+- [ ] **Step 4: Run tests to verify they pass**
+
+Run: `python3 -m pytest tests/test_reelkit.py -v`
+Expected: 3 passed.
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add scripts/reelkit.py tests/test_reelkit.py
+git commit -m "feat: add reelkit content-kit generator (caption/hashtags/overlay)"
+```
+
+---
+
 ## Self-Review Notes
 
 - **Spec coverage:** §3 decompile → Tasks 2,6; §4 structure → Tasks 1,9,10,11; §5 scanner → Tasks 4,5; §6 contributor flow → Tasks 8,10,11; §7 virality → Tasks 7,11,12; §8 error handling → Tasks 5 (unknown=yellow), 8 (fail on red); §9 testing → Tasks 3,5,6,7,8; §0 Why-Shortcuts → Task 11. All covered.

@@ -79,6 +79,11 @@ with one thing no existing collection has: **every shortcut is automatically sca
 and scored for safety**. The safety score *is* the product — it's the trust signal and
 the virality hook ("the only shortcut repo that scores every shortcut for safety").
 
+**Positioning:** *Shortcuts are the new apps.* As app fatigue grows, a good shortcut
+replaces a single-purpose app — and this repo is the **safety-rated app store** for them:
+browse, see exactly what each one can do (the score), install with one tap. That framing —
+an app store where every "app" is open, free, and safety-graded — is the whole pitch.
+
 **Primary success metric:** stars (be the most-starred shortcuts repo).
 **Secondary:** contributions per week, % of shortcuts with a green safety badge.
 
@@ -248,10 +253,25 @@ Why it compounds:
 5. Seed 2–3 example shortcuts; create `sexy-shortcuts` mirror; publish, set topics.
 6. (Later session) Content/seeding pass + launch.
 
-## 11. Out of Scope (v1 — YAGNI)
+## 11. Content tooling (in scope) vs. auto-posting (out)
+
+**In scope — a content-kit generator (`reelkit.py`):** given a shortcut's `meta.yml` +
+`scan.json`, emit a ready-to-post bundle: a caption (hook + "one tap to install — link in
+bio"), the safety badge line, suggested hashtags, and an on-screen text overlay script.
+Turns every repo entry into shootable marketing material. Pure text generation, no APIs,
+zero ToS risk. (See plan Task 13.)
+
+**Out of scope (v1) — automated posting to TikTok/Instagram.** Their APIs heavily restrict
+programmatic publishing and it violates ToS for most accounts; automating it risks bans,
+which would destroy the distribution strategy it's meant to serve. The human posts; the tool
+just makes posting trivial. Revisit only with official Creator/Graph API access.
+
+## 12. Out of Scope (v1 — YAGNI)
 
 - Sandbox/dynamic execution of shortcuts (heavy infra; static scan is the v1 benchmark).
 - A web frontend / hosted site (README *is* the UI for v1).
 - Auth, accounts, ratings — GitHub stars/issues are the social layer.
+- Shortcuts that *target* GitHub/TikTok/IG are welcome as normal **categories** in the
+  collection (cheap — just a `category` value), but no special tooling is built for them in v1.
 - Automated re-signing of `.shortcut` files if CI signing proves unreliable — fall back to
   storing only the readable plist + iCloud link and let users import from the link.
