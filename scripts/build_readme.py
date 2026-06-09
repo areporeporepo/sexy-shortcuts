@@ -114,9 +114,15 @@ def render_readme(entries):
         "([Apple, June 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)). "
         "On Private Cloud Compute, *user data is never stored or shared with anyone, including Apple* — "
         "*stateless computation, non-targetability, verifiable transparency* "
-        "([Apple Security, June 2026](https://security.apple.com/blog/expanding-pcc/)). So even "
-        "**high-risk data** (health, location, private notes, enterprise **IP**) is safe to feed an "
-        "agent here — same architecture, personal or enterprise. "
+        "([Apple Security, June 2026](https://security.apple.com/blog/expanding-pcc/)).",
+        "",
+        "This is the industry building privacy together: the Apple Foundation Models are "
+        "*\"custom-built in collaboration with **Google**,\"* and Apple *\"worked with **Google** and "
+        "**NVIDIA** to extend Private Cloud Compute to NVIDIA GPUs in Google Cloud, while maintaining "
+        "the same guarantees to protect our users' privacy\"* "
+        "([Apple, June 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)). "
+        "So even **high-risk data** (health, location, private notes, enterprise **IP**) is safe to "
+        "feed an agent here — same architecture, personal or enterprise. "
         "See [Why Shortcuts?](docs/why-shortcuts.md) for the full privacy/security case.",
         "",
         "**Every entry installs in one tap from a real Apple iCloud link** — no clicking",

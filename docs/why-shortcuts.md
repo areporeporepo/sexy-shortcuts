@@ -118,9 +118,14 @@ requirements
 - **verifiable transparency** — every PCC binary is **published for public inspection**, with
   an append-only ledger of the fleet's hardware and live nodes open to security researchers.
 
-Notably, that same June 2026 post describes PCC *expanding* onto additional infrastructure
-while keeping all five guarantees intact and verifiable — so the privacy boundary scales
-without weakening.
+Notably, this is the industry building the privacy layer *together*. The Apple Foundation
+Models are *"custom-built in collaboration with Google,"* and for the most capable server
+model Apple *"worked with Google and NVIDIA to extend Private Cloud Compute to NVIDIA GPUs in
+Google Cloud, while maintaining the same guarantees to protect our users' privacy"*
+([Apple, June 8 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)).
+That's the strongest possible signal: even across **Apple**, **Google**, and **NVIDIA**
+infrastructure, the five PCC requirements hold and stay cryptographically verifiable — the
+privacy boundary scales onto the industry's biggest hardware without weakening.
 
 That is what makes a Shortcuts-based agent uniquely safe for **high-risk personal data**: the
 reasoning step runs on-device, or escalates to PCC — either way your health, location, and
