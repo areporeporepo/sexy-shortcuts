@@ -1,4 +1,4 @@
-# sexy-shortcuts
+# awesome-shortcuts
 
 > ⚠️ **Requires iOS 27 · macOS 27 · watchOS 27** (the 2026 releases). The developer beta is available now — install it to use these shortcuts.
 
@@ -9,7 +9,7 @@ More private than running an agent: no resident process, no credentials to leak,
 
 It works *with* Siri AI, not against it: **Siri** runs your shortcuts by voice, **Apple Intelligence** powers their reasoning on-device (the "Use Model" action), and you keep full custom control.
 
-Because that reasoning runs on-device or via **Apple Private Cloud Compute** — never stored, never used for training, cryptographically verifiable — even **high-risk data** (health, location, private notes, and enterprise **IP**) is safe to feed an agent here. Same architecture, personal or enterprise. See [Why Shortcuts?](docs/why-shortcuts.md) for the full privacy/security case.
+Because that reasoning runs on-device or via **Apple Private Cloud Compute** — *stateless computation, no privileged runtime access, non-targetability,* and *verifiable transparency* ([Apple Security, June 2026](https://security.apple.com/blog/expanding-pcc/)) — even **high-risk data** (health, location, private notes, and enterprise **IP**) is safe to feed an agent here. Same architecture, personal or enterprise. See [Why Shortcuts?](docs/why-shortcuts.md) for the full privacy/security case.
 
 **Every entry installs in one tap from a real Apple iCloud link** — no clicking
 through to another repo. Browse, check the safety score, tap Install.

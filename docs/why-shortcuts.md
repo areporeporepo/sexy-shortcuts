@@ -98,15 +98,22 @@ someone else's servers and terms, with the real risk it's retained or used to tr
 That single fear is why most people — and nearly every enterprise — *won't* let AI touch
 their high-risk data.
 
-Apple's answer — a centerpiece of Apple Intelligence's privacy story and reaffirmed at WWDC
-— is **Private Cloud Compute (PCC)**. When a request needs more than the on-device model, it
-escalates to Apple-silicon servers running a hardened OS where, per Apple's stated and
-**cryptographically verifiable** guarantees:
+Apple's answer — a centerpiece of Apple Intelligence's privacy story — is **Private Cloud
+Compute (PCC)**. When a request needs more than the on-device model, it escalates to a
+hardened PCC node built on five stated, **cryptographically verifiable** requirements
+([Apple Security, "Expanding Private Cloud Compute," June 8 2026](https://security.apple.com/blog/expanding-pcc/)):
 
-- your data is **never stored** and is unreachable once the request completes (stateless),
-- it is **never used to train** any model,
-- **not even Apple** can access it, and
-- the build is **open to independent security inspection**.
+- **stateless computation** — your data is unreachable once the request completes and is
+  never retained or used to train a model,
+- **enforceable guarantees** and **no privileged runtime access** — not even Apple can reach
+  your data,
+- **non-targetability** — an attacker can't aim at a specific user's request, and
+- **verifiable transparency** — every PCC binary is **published for public inspection**, with
+  an append-only ledger of the fleet's hardware and live nodes open to security researchers.
+
+Notably, that same June 2026 post describes PCC *expanding* onto additional infrastructure
+while keeping all five guarantees intact and verifiable — so the privacy boundary scales
+without weakening.
 
 That is what makes a Shortcuts-based agent uniquely safe for **high-risk personal data**: the
 reasoning step runs on-device, or escalates to PCC — either way your health, location, and

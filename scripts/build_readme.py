@@ -109,10 +109,12 @@ def render_readme(entries):
         "**Apple Intelligence** powers their reasoning on-device (the \"Use Model\" action), "
         "and you keep full custom control.",
         "",
-        "Because that reasoning runs on-device or via **Apple Private Cloud Compute** — never "
-        "stored, never used for training, cryptographically verifiable — even **high-risk data** "
-        "(health, location, private notes, and enterprise **IP**) is safe to feed an agent here. "
-        "Same architecture, personal or enterprise. "
+        "Because that reasoning runs on-device or via **Apple Private Cloud Compute** — "
+        "*stateless computation, no privileged runtime access, non-targetability,* and "
+        "*verifiable transparency* "
+        "([Apple Security, June 2026](https://security.apple.com/blog/expanding-pcc/)) — even "
+        "**high-risk data** (health, location, private notes, and enterprise **IP**) is safe to "
+        "feed an agent here. Same architecture, personal or enterprise. "
         "See [Why Shortcuts?](docs/why-shortcuts.md) for the full privacy/security case.",
         "",
         "**Every entry installs in one tap from a real Apple iCloud link** — no clicking",
