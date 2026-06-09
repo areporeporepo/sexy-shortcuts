@@ -1,0 +1,19 @@
+docs/superpowers/specs/2026-06-09-awesome-shortcuts-design.md
+  s_c605094134b65f::t_0dc0a88576730e 35-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "78db75cda31886ba401949d7840fe06c88a9a111",
+  "prompts": {},
+  "sessions": {
+    "s_c605094134b65f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "347e7bc1-aa66-4bb4-884b-198a4aa57b43",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "anh nguyen <anh.nqqq@icloud.com>"
+    }
+  }
+}
