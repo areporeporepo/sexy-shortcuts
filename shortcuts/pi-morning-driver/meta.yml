@@ -1,0 +1,8 @@
+name: "PI Morning Driver"
+slug: pi-morning-driver
+author: "Anh Nguyen"
+category: "Productivity"
+source: "https://www.icloud.com/shortcuts/REPLACE_WITH_REAL_ID"
+description: "A research-lab morning briefing: today's calendar + weather + newest arXiv in your field, then deep-links into Slack/email/Zoom to triage. Customizable per PI."
+date_added: "2026-06-09"
+tags: [research, academia, stanford, slac, morning-briefing, productivity, arxiv]

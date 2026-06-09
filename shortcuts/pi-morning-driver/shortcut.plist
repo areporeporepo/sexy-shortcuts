@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WFWorkflowActions</key>
+	<array>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.comment</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFCommentActionText</key>
+				<string>PI Morning Driver — a personalized research-lab morning briefing.
+
+WHAT IT DOES (all accessible to Shortcuts):
+  • Reads today's calendar events
+  • Reads current weather for your commute
+  • Pulls newest arXiv papers in your field (CUSTOMIZE the category below)
+  • Assembles everything into one briefing
+  • Deep-links you into Slack + email + Zoom for fast triage
+
+HONEST BOUNDARY: Shortcuts cannot read your Slack/Gmail message CONTENT or act inside
+those apps — no API exposes that. It opens them for you. Reading/drafting is an agent's
+job (e.g. Claude); this shortcut aggregates what is accessible and launches the rest.
+
+CUSTOMIZE: arXiv category (physics.acc-ph for SLAC accelerator work — change to your
+field, e.g. cond-mat, hep-ex, q-bio), and your Slack workspace deep link.</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getupcomingevents</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFGetUpcomingItemCount</key>
+				<integer>5</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getweatherconditions</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict/>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.downloadurl</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFURL</key>
+				<string>http://export.arxiv.org/api/query?search_query=cat:physics.acc-ph&amp;sortBy=submittedDate&amp;sortOrder=descending&amp;max_results=5</string>
+				<key>WFHTTPMethod</key>
+				<string>GET</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.showresult</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>Text</key>
+				<string>☀️ Good morning, PI. Here's your lab briefing — calendar, weather, and the latest arXiv in your field. Tap through to triage Slack and email below.</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.url</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFURLActionURL</key>
+				<string>slack://open</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.openurl</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict/>
+		</dict>
+	</array>
+</dict>
+</plist>

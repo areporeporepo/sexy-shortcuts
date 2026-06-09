@@ -1,0 +1,31 @@
+{
+  "score": 50,
+  "tier": "yellow",
+  "badge": "yellow",
+  "findings": [
+    {
+      "id": "is.workflow.actions.getupcomingevents",
+      "tier": "yellow",
+      "weight": 15,
+      "reason": "Reads your calendar events."
+    },
+    {
+      "id": "is.workflow.actions.getweatherconditions",
+      "tier": "yellow",
+      "weight": 10,
+      "reason": "Reads weather for your current location."
+    },
+    {
+      "id": "is.workflow.actions.downloadurl",
+      "tier": "yellow",
+      "weight": 20,
+      "reason": "Sends a network request / downloads from a URL \u2014 possible exfiltration."
+    },
+    {
+      "id": "is.workflow.actions.openurl",
+      "tier": "yellow",
+      "weight": 5,
+      "reason": "Opens a URL in the browser \u2014 a visible side effect, leaves the app."
+    }
+  ]
+}

@@ -81,3 +81,15 @@ rules:
     tier: yellow
     weight: 5
     reason: "Opens a URL in the browser — a visible side effect, leaves the app."
+  - id: is.workflow.actions.getupcomingevents
+    tier: yellow
+    weight: 15
+    reason: "Reads your calendar events."
+  - id: is.workflow.actions.getweatherconditions
+    tier: yellow
+    weight: 10
+    reason: "Reads weather for your current location."
+  - id: is.workflow.actions.getupcomingreminders
+    tier: yellow
+    weight: 10
+    reason: "Reads your reminders."
