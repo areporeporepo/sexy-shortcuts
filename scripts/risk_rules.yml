@@ -1,0 +1,47 @@
+# Each rule maps a Shortcuts action identifier to a risk tier, a score penalty,
+# and a human-readable reason shown in SAFETY.md. Tiers: red > yellow > green.
+default_unknown:
+  tier: yellow
+  weight: 10
+  reason: "Unrecognized action — treated as medium risk until reviewed."
+rules:
+  - id: is.workflow.actions.runshellscript
+    tier: red
+    weight: 60
+    reason: "Runs a shell script — arbitrary code execution on macOS."
+  - id: is.workflow.actions.runsshscript
+    tier: red
+    weight: 60
+    reason: "Runs commands on a remote host over SSH."
+  - id: is.workflow.actions.runjavascriptonwebpage
+    tier: red
+    weight: 40
+    reason: "Injects and runs JavaScript in a web page."
+  - id: is.workflow.actions.downloadurl
+    tier: yellow
+    weight: 20
+    reason: "Sends a network request / downloads from a URL — possible exfiltration."
+  - id: is.workflow.actions.getmycontacts
+    tier: yellow
+    weight: 15
+    reason: "Reads your contacts."
+  - id: is.workflow.actions.getcurrentlocation
+    tier: yellow
+    weight: 15
+    reason: "Reads your current location."
+  - id: is.workflow.actions.getclipboard
+    tier: yellow
+    weight: 15
+    reason: "Reads the clipboard contents."
+  - id: is.workflow.actions.openapp
+    tier: yellow
+    weight: 5
+    reason: "Opens another app."
+  - id: is.workflow.actions.gettext
+    tier: green
+    weight: 0
+    reason: "Creates static text."
+  - id: is.workflow.actions.showresult
+    tier: green
+    weight: 0
+    reason: "Shows a result on screen."

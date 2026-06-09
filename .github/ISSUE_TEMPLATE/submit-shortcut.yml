@@ -1,0 +1,30 @@
+name: Submit a shortcut
+description: Propose a shortcut for the collection (paste an iCloud link — CI does the rest).
+labels: ["submission"]
+body:
+  - type: input
+    id: icloud
+    attributes:
+      label: iCloud share link
+      placeholder: "https://www.icloud.com/shortcuts/..."
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Shortcut name
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: [Productivity, Utilities, Media, Health, Home, Developer, Fun]
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What does it do?
+    validations:
+      required: true

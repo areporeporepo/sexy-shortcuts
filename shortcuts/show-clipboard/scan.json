@@ -1,0 +1,13 @@
+{
+  "score": 85,
+  "tier": "yellow",
+  "badge": "yellow",
+  "findings": [
+    {
+      "id": "is.workflow.actions.getclipboard",
+      "tier": "yellow",
+      "weight": 15,
+      "reason": "Reads the clipboard contents."
+    }
+  ]
+}

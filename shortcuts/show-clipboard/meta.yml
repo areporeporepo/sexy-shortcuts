@@ -1,0 +1,8 @@
+name: "Show Clipboard"
+slug: show-clipboard
+author: "Anh Nguyen"
+category: "Utilities"
+source: "https://www.icloud.com/shortcuts/REPLACE_WITH_REAL_ID"
+description: "Displays the current clipboard contents."
+date_added: "2026-06-09"
+tags: [clipboard, utility]

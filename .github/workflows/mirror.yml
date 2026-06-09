@@ -1,0 +1,19 @@
+name: Mirror to sexy-shortcuts
+on:
+  push:
+    branches: [main]
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Push mirror
+        env:
+          MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
+        run: |
+          if [ -z "$MIRROR_TOKEN" ]; then
+            echo "MIRROR_TOKEN not set — skipping mirror. See CONTRIBUTING / plan Task 12."
+            exit 0
+          fi
+          git push --force "https://x-access-token:${MIRROR_TOKEN}@github.com/${GITHUB_REPOSITORY_OWNER}/sexy-shortcuts.git" main:main
