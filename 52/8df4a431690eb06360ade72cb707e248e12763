@@ -1,0 +1,23 @@
+README.md
+  s_c605094134b65f::t_3d02a5982c4287 8-10
+docs/why-shortcuts.md
+  s_c605094134b65f::t_1c0fbec89241f5 71,75-89
+scripts/build_readme.py
+  s_c605094134b65f::t_1bdc8dc1b62812 106-111
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "528df4a431690eb06360ade72cb707e248e12763",
+  "prompts": {},
+  "sessions": {
+    "s_c605094134b65f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "347e7bc1-aa66-4bb4-884b-198a4aa57b43",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "anh nguyen <anh.nqqq@icloud.com>"
+    }
+  }
+}
