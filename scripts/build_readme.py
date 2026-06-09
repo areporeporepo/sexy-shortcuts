@@ -55,6 +55,9 @@ def render_readme(entries):
     out = [
         "# awesome-shortcuts",
         "",
+        "> ⚠️ **Requires iOS 27 · macOS 27 · watchOS 27** (the 2026 releases). "
+        "The developer beta is available now — install it to use these shortcuts.",
+        "",
         "The safety-rated app store for Apple Shortcuts. Every shortcut is decompiled and",
         "scored for safety — each score reflects what a shortcut *can do*, not proof of intent.",
         "See [Why Shortcuts?](docs/why-shortcuts.md) for the privacy/security case.",

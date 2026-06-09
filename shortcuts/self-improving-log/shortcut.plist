@@ -10,20 +10,38 @@
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>WFCommentActionText</key>
-				<string>Self-Improving Log — the "self-improving skill" loop (clawhub / Hermes style), as a Shortcut.
+				<string>Self-Improving Log — the self-improving-skill loop (clawhub / Hermes style), as a Shortcut.
 
-THE IDEA: those popular self-improving agent skills don't rewrite themselves — they CAPTURE
-learnings, mistakes, and corrections to a persistent file and review them later. This
-shortcut does exactly that on your phone/watch: invoke it from Siri or the Share Sheet,
-say what you learned, and it appends a timestamped line to a running "Learnings" note you
-review weekly. Capture → review → promote, by hand, with zero network.
+THE MECHANISM (there's no magic — it's a disciplined append-and-review loop over files):
+  1. CAPTURE  → sort each note into one of three buckets: Error · Learning · Feature idea,
+                then append a timestamped line to your "Self-Improvement Log" note.
+  2. REVIEW   → re-read the log weekly (pair it with the PI Weekly Briefing shortcut) so you
+                stop repeating the same mistakes.
+  3. PROMOTE  → graduate durable lessons into your permanent operating principles / CLAUDE.md.
 
 HONEST BOUNDARY: a Shortcut cannot rewrite its own actions or "learn" autonomously — that's
-an agent's job. This is the capture tool that feeds your improvement loop, which is precisely
-what the clawhub/Hermes skills are too.
+an agent's job. This is the CAPTURE tool that feeds the loop, which is exactly what the
+clawhub/Hermes self-improving skills are too (they append to ERRORS/LEARNINGS/FEATURE files;
+they don't rewrite themselves either).
 
-SETUP: point the "Append to Note" action at a note called "Learnings" (or your file of
-choice). Add it to Siri ("log a learning") and the Share Sheet for capture-anywhere.</string>
+SETUP: in Choose from Menu, wire each branch to append to its bucket (Errors / Learnings /
+Features) note, or keep one "Self-Improvement Log" note tagged by bucket. Add to Siri ("log a
+learning") and the Share Sheet for capture-anywhere. 100% device-local, no network.</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.choosefrommenu</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFMenuPrompt</key>
+				<string>What are you capturing?</string>
+				<key>WFMenuItems</key>
+				<array>
+					<string>🐞 Error</string>
+					<string>💡 Learning</string>
+					<string>🚀 Feature idea</string>
+				</array>
 			</dict>
 		</dict>
 		<dict>
@@ -32,7 +50,7 @@ choice). Add it to Siri ("log a learning") and the Share Sheet for capture-anywh
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>WFAskActionPrompt</key>
-				<string>What did you learn? (a mistake, a fix, a better way)</string>
+				<string>Describe it (a mistake, a fix, a better way):</string>
 			</dict>
 		</dict>
 		<dict>
@@ -47,7 +65,7 @@ choice). Add it to Siri ("log a learning") and the Share Sheet for capture-anywh
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>WFNoteActionNote</key>
-				<string>Learnings</string>
+				<string>Self-Improvement Log</string>
 			</dict>
 		</dict>
 		<dict>
@@ -56,7 +74,7 @@ choice). Add it to Siri ("log a learning") and the Share Sheet for capture-anywh
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>WFNotificationActionBody</key>
-				<string>📝 Logged. Future-you says thanks.</string>
+				<string>📝 Captured. Review it weekly. Future-you says thanks.</string>
 			</dict>
 		</dict>
 	</array>
