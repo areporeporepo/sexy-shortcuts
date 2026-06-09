@@ -1,0 +1,29 @@
+shortcuts/orion-status/scan.json
+  s_fda73504c6f2ec::t_7df460d170029e 1-19
+README.md
+  s_fda73504c6f2ec::t_7df460d170029e 13,24
+shortcuts/orion-status/meta.yml
+  s_fda73504c6f2ec::t_ae23e384e2a113 1-9
+shortcuts/orion-status/shortcut.plist
+  s_fda73504c6f2ec::t_5f7d467dbb3936 1-127
+shortcuts/orion-status/SAFETY.md
+  s_fda73504c6f2ec::t_7df460d170029e 1-9
+shortcuts/orion-status/prompt.md
+  s_fda73504c6f2ec::t_7df460d170029e 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "3015051c6ae8dae075539d79be638d050ec24f30",
+  "prompts": {},
+  "sessions": {
+    "s_fda73504c6f2ec": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b56369dd-eddc-4ce8-b5f7-392daf14f439",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "anh nguyen <anh.nqqq@icloud.com>"
+    }
+  }
+}
