@@ -71,6 +71,15 @@ def platform_badges(entry):
     return " ".join(badges) or "📱"
 
 
+def short_desc(entry, limit=120):
+    """Trim the description to one tidy line for the README table; the full text stays in
+    each shortcut's prompt.md."""
+    d = entry.get("description", "")
+    if len(d) <= limit:
+        return d
+    return d[:limit].rsplit(" ", 1)[0].rstrip(" ,;:—-") + "…"
+
+
 def render_safety(entry):
     s = entry["scan"]
     lines = [
@@ -111,7 +120,11 @@ def render_readme(entries):
         "Apple Foundation Models, Private Cloud Compute, the device-only data moat, and how this "
         "compares to cloud agents.",
         "",
-        "Runs on: 📱 iOS · 💻 macOS · ⌚ watchOS",
+        f"## Shortcuts ({len(rows)})",
+        "",
+        "**Safety:** 🟢 device-local only · 🟡 reads private data, network, or leaves the app · "
+        "🔴 code execution or off-device exfiltration. **Runs on:** 📱 iOS · 💻 macOS · ⌚ watchOS. "
+        "Tap 📋 for a shortcut's readable recipe.",
         "",
         "| Safety | Score | Shortcut | Install | Prompt | Category | Runs on | What it does |",
         "| :----: | :---: | -------- | :-----: | :----: | -------- | :-----: | ------------ |",
@@ -122,8 +135,19 @@ def render_readme(entries):
             f"| {BADGE[s['badge']]} | {s['score']} | "
             f"[{e['name']}](shortcuts/{e['slug']}/) | {install_link(e)} | "
             f"[📋](shortcuts/{e['slug']}/prompt.md) | {e['category']} | "
-            f"{platform_badges(e)} | {e['description']} |"
+            f"{platform_badges(e)} | {short_desc(e)} |"
         )
+    out += [
+        "",
+        "---",
+        "",
+        "**Contribute:** open a PR or paste an iCloud link — see "
+        "[CONTRIBUTING](CONTRIBUTING.md). Using an AI agent? See [AGENTS.md](AGENTS.md). "
+        "Every submission is scanned and safety-scored automatically.",
+        "",
+        "<sub>Not affiliated with or endorsed by Apple. Apple, Shortcuts, Siri, and Apple "
+        "Intelligence are trademarks of Apple Inc.</sub>",
+    ]
     return "\n".join(out) + "\n"
 
 
