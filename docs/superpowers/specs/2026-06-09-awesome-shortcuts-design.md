@@ -32,6 +32,22 @@ permission prompts**, with **no resident agent holding your shell.** You get aut
 leverage without handing a program your whole computer. For a huge class of tasks —
 "every morning, pull X, transform it, send it to Y" — that is strictly the safer engine.
 
+**Phone-native — no laptop required. It's "OpenClaw without a laptop."** This is the
+biggest, broadest part of the case. Agent frameworks need a *computer* running an
+autonomous process. Shortcuts runs **on the iPhone itself** — no Mac, no resident agent,
+no shell — and still reaches across your apps. It automates whatever apps *expose*: the
+share sheet, App Intents, URL schemes, plus OS triggers (NFC tap, time of day, location,
+Focus mode, "when this app opens"). That means real flows built around the apps you
+actually live in — e.g. act on the TikTok/Instagram/YouTube video you're viewing (save it,
+re-share it, run it through a transform, log it), post on a schedule, or fire an automation
+when you arrive somewhere — **all from the phone, all sandboxed.** It is agent-like leverage
+in your pocket without exposing a machine.
+
+> Honest boundary: Shortcuts drives apps through the hooks those apps publish — it is **not**
+> an arbitrary in-app UI scraper. "Do things with TikTok" means "use what TikTok exposes to
+> Shortcuts (share sheet, intents, links)," not "remote-control TikTok's screen." Stated this
+> way it's both true and still impressive — and the precision is the credibility.
+
 **It replaces a lot.** A single shortcut can stand in for a pile of single-purpose
 utility apps and the risky one-off scripts people otherwise run with broad permissions.
 Fewer apps, fewer trackers, fewer processes with access to your stuff.
