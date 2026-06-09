@@ -68,15 +68,25 @@ because there's no autonomous process and no machine to expose. **Honest boundar
 this is not a claim that Shortcuts out-reasons agents — it doesn't. They *think*; Shortcuts
 *acts*, privately. Use both: the agent plans, the shortcut executes on-device.
 
-## More customizable than Siri / Apple Intelligence
+## More customizable than Siri — and works *with* Siri AI, not against it
 
 Siri and Apple Intelligence do what **Apple ships** — a fixed set of built-in behaviors you
 can't reshape. A Shortcut does what **you wire**: your own action chain, your own logic and
-conditions, your own model call, your own data flow, your own memory file. And you don't
-lose Siri to get this — you can trigger any shortcut by saying "Hey Siri, <name>." So
-Shortcuts don't compete with Siri; they **extend** it past the limits of what Apple
-pre-built, while staying inside the same on-device, permissioned sandbox. Maximum
-customization, none of the exposure of running your own agent.
+conditions, your own model call, your own data flow, your own memory file.
+
+But this isn't Shortcuts *vs.* Siri — they **complement each other**, in both directions:
+
+- **Siri runs your shortcuts.** Say "Hey Siri, <name>" and your custom flow executes —
+  Siri becomes the voice front-end to anything you build.
+- **Your shortcuts use Apple Intelligence.** The on-device **"Use Model"** action lets a
+  shortcut call Apple's private, on-device model — so the agents in this repo can run their
+  reasoning step with *zero network and no API key*, fully inside Apple Intelligence.
+- **Siri suggests your shortcuts** at the right moment based on context.
+
+So the stack is: **Apple Intelligence provides the on-device brains, Siri provides the
+voice, and Shortcuts provide the custom, permissioned hands.** You get more customization
+than Siri alone could ever offer, while staying inside the same on-device, permissioned
+sandbox — none of the exposure of running your own agent.
 
 ## Why this repo
 
