@@ -2,6 +2,7 @@
 shortcut's meta.yml + scan.json. Pure render functions are unit-tested; the
 filesystem glue (load_entries / main) walks shortcuts/<slug>/."""
 import json
+import plistlib
 from pathlib import Path
 
 import yaml
@@ -9,6 +10,45 @@ import yaml
 BADGE = {"green": "🟢", "yellow": "🟡", "red": "🔴"}
 PLATFORM = {"ios": "📱", "macos": "💻", "watchos": "⌚", "ipados": "📱"}
 ROOT = Path(__file__).parents[1]
+RULES = ROOT / "scripts" / "risk_rules.yml"
+
+
+def action_descriptions(rules_path=RULES):
+    """Map each known action id to its human-readable reason (reused as the prompt step)."""
+    data = yaml.safe_load(Path(rules_path).read_text())
+    return {r["id"]: r["reason"] for r in data["rules"]}
+
+
+def load_actions(plist_path):
+    with open(plist_path, "rb") as fh:
+        doc = plistlib.load(fh)
+    return doc.get("WFWorkflowActions", [])
+
+
+def render_prompt(entry, actions, descriptions):
+    """A plain-English, copy-pasteable recipe derived from the shortcut's actions, so the
+    prompt always matches what the shortcut actually does."""
+    lines = [
+        f"# {entry['name']} — prompt",
+        "",
+        "> A plain-English recipe of this shortcut, auto-generated from its actions so it",
+        "> always matches what the shortcut really does. Read it before you install — or hand",
+        "> it to your own agent to rebuild the shortcut from scratch.",
+        "",
+        entry["description"],
+        "",
+        "## Steps",
+        "",
+    ]
+    n = 1
+    for a in actions:
+        ident = a.get("WFWorkflowActionIdentifier", "")
+        if ident == "is.workflow.actions.comment":
+            continue
+        lines.append(f"{n}. {descriptions.get(ident, f'`{ident}`')}")
+        n += 1
+    lines += ["", f"**Install:** {entry['source']}", ""]
+    return "\n".join(lines)
 
 
 def install_link(entry):
@@ -67,14 +107,18 @@ def render_readme(entries):
         "",
         "Runs on: 📱 iOS · 💻 macOS · ⌚ watchOS",
         "",
-        "| Safety | Score | Shortcut | Install | Category | Runs on | What it does |",
-        "| :----: | :---: | -------- | :-----: | -------- | :-----: | ------------ |",
+        "Each shortcut has a one-tap **Install** link *and* a 📋 **prompt** — a plain-English",
+        "recipe you can read before installing (or hand to your own agent to rebuild it).",
+        "",
+        "| Safety | Score | Shortcut | Install | Prompt | Category | Runs on | What it does |",
+        "| :----: | :---: | -------- | :-----: | :----: | -------- | :-----: | ------------ |",
     ]
     for e in rows:
         s = e["scan"]
         out.append(
             f"| {BADGE[s['badge']]} | {s['score']} | "
-            f"[{e['name']}](shortcuts/{e['slug']}/) | {install_link(e)} | {e['category']} | "
+            f"[{e['name']}](shortcuts/{e['slug']}/) | {install_link(e)} | "
+            f"[📋](shortcuts/{e['slug']}/prompt.md) | {e['category']} | "
             f"{platform_badges(e)} | {e['description']} |"
         )
     return "\n".join(out) + "\n"
@@ -93,9 +137,13 @@ def load_entries(shortcuts_dir=ROOT / "shortcuts"):
 def main():  # pragma: no cover - filesystem glue
     entries = load_entries()
     (ROOT / "README.md").write_text(render_readme(entries))
+    descriptions = action_descriptions()
     for e in entries:
-        (ROOT / "shortcuts" / e["slug"] / "SAFETY.md").write_text(render_safety(e))
-    print(f"rebuilt README + {len(entries)} SAFETY.md files")
+        d = ROOT / "shortcuts" / e["slug"]
+        (d / "SAFETY.md").write_text(render_safety(e))
+        actions = load_actions(d / "shortcut.plist")
+        (d / "prompt.md").write_text(render_prompt(e, actions, descriptions))
+    print(f"rebuilt README + {len(entries)} SAFETY.md + {len(entries)} prompt.md files")
 
 
 if __name__ == "__main__":

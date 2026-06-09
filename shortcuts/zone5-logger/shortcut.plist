@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WFWorkflowActions</key>
+	<array>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.comment</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFCommentActionText</key>
+				<string>Zone 5 Logger — auto-logs Zone 5 heart-rate sessions from Apple Watch to a GitHub CSV.
+
+WHAT IT DOES:
+  1. Reads your peak heart rate from Health.
+  2. If it crosses your Zone 5 threshold, builds a CSV row (date, "Zone5", peak HR).
+  3. Base64-encodes it and PUTs it to a GitHub-hosted CSV via the GitHub API.
+  4. Notifies you it logged.
+
+Based on Helgerud 2007 (HIIT is highly effective for VO₂max). No Calculate actions —
+threshold comparison via a conditional.
+
+⚠️ PRIVACY NOTE (why this scores yellow): it sends your heart-rate data to a remote server
+(GitHub) and base64-encodes the payload. That's legitimate here — it's YOUR repo and YOUR
+token — but it is exactly the kind of off-device data flow the safety scanner flags so you
+can see it. Put your GitHub token in the "Get Contents of URL" action's headers.
+
+CUSTOMIZE: your Zone 5 threshold BPM, and the GitHub repo/file + token.</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.gethealthsample</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFHealthSampleType</key>
+				<string>Heart Rate</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.conditional</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFCondition</key>
+				<string>isGreaterThan</string>
+				<key>WFNumberValue</key>
+				<integer>171</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.base64encode</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict/>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.downloadurl</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFHTTPMethod</key>
+				<string>PUT</string>
+				<key>WFURL</key>
+				<string>https://api.github.com/repos/USER/REPO/contents/zone5.csv</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.shownotification</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFNotificationActionBody</key>
+				<string>🟩 Zone 5 logged.</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

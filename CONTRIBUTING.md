@@ -1,10 +1,18 @@
 # Contributing
 
-1. Open a **Submit a shortcut** issue and paste your iCloud share link.
-2. CI fetches the unsigned shortcut, decompiles it, and posts a safety score.
-3. A maintainer reviews the flagged actions and, if accepted, opens a PR that adds
-   `shortcuts/<slug>/` with the frozen `shortcut.plist`, `meta.yml`, and `scan.json`.
-4. On merge, the README leaderboard and `SAFETY.md` regenerate automatically.
+> 🤖 **Contributing with an AI agent?** See [AGENTS.md](AGENTS.md) for a copy-paste block
+> that tells your agent (Claude Code, Codex, …) exactly how to open a correct PR.
+
+Two ways to contribute:
+
+**A. Open a PR directly** (you or your agent) — add `shortcuts/<slug>/shortcut.plist` +
+`meta.yml`, run the tooling, and open a PR with the [template](.github/PULL_REQUEST_TEMPLATE.md).
+CI scans it and posts the safety score.
+
+**B. Just submit a link** — open a **Submit a shortcut** issue with your iCloud link:
+1. CI fetches the unsigned shortcut, decompiles it, and posts a safety score.
+2. A maintainer reviews the flagged actions and, if accepted, opens the PR.
+3. On merge, the README leaderboard, `SAFETY.md`, and `prompt.md` regenerate automatically.
 
 ## Safety rules
 

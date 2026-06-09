@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WFWorkflowActions</key>
+	<array>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.comment</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFCommentActionText</key>
+				<string>Shortcut Smith — an agentic shortcut that builds shortcuts FOR you.
+
+HOW IT WORKS:
+  1. You describe what you want ("text my wife my ETA when I leave work").
+  2. It sends that to a model and asks for a step-by-step shortcut RECIPE
+     (in the awesome-shortcuts prompt format).
+  3. It shows you the recipe and saves it to a "Shortcut Recipes" note.
+  4. You build it in ~60 seconds — or hand the recipe to your agent, or submit it
+     to awesome-shortcuts as a PR.
+
+HONEST BOUNDARY: iOS has no action that silently creates and installs a brand-new shortcut
+from text — so Shortcut Smith produces the buildable RECIPE/blueprint, not a finished
+.shortcut. That's the same prompt format every entry in this repo ships, so the recipe IS
+the spec. (It also means no shortcut can conjure itself behind your back — by design.)
+
+SETUP: put your model API endpoint + key in the "Get Contents of URL" action, OR on
+iOS 27 swap it for the on-device "Use Model" action (no network, no key). Add to Siri
+("build me a shortcut") and the Share Sheet.</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.ask</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFAskActionPrompt</key>
+				<string>What should the shortcut do? Describe it in one sentence.</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.downloadurl</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFHTTPMethod</key>
+				<string>POST</string>
+				<key>WFURL</key>
+				<string>https://api.anthropic.com/v1/messages</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.showresult</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>Text</key>
+				<string>🛠️ Here's your shortcut recipe. Build it, or submit it to awesome-shortcuts.</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.appendnote</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFNoteActionNote</key>
+				<string>Shortcut Recipes</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.shownotification</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFNotificationActionBody</key>
+				<string>🛠️ Recipe saved to your Shortcut Recipes note.</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -105,3 +105,15 @@ rules:
     tier: green
     weight: 0
     reason: "Appends text to one of your own Notes (device-local, no network)."
+  - id: is.workflow.actions.gethealthsample
+    tier: yellow
+    weight: 15
+    reason: "Reads Health data (e.g. heart rate)."
+  - id: is.workflow.actions.conditional
+    tier: green
+    weight: 0
+    reason: "Branches on a condition (control flow)."
+  - id: is.workflow.actions.base64encode
+    tier: yellow
+    weight: 15
+    reason: "Base64-encodes data — common before sending a payload to a server."

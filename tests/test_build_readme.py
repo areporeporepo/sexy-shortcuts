@@ -1,4 +1,6 @@
-from scripts.build_readme import render_readme, render_safety, platform_badges, install_link
+from scripts.build_readme import (
+    render_readme, render_safety, platform_badges, install_link, render_prompt,
+)
 
 
 def _entry(slug, name, score, tier, category):
@@ -46,6 +48,24 @@ def test_render_readme_has_install_column():
     md = render_readme([e])
     assert "| Install |" in md
     assert "[⬇️ Install](https://www.icloud.com/shortcuts/realid123)" in md
+
+
+def test_render_prompt_numbers_steps_and_skips_comments():
+    e = _entry("a", "Alpha", 90, "green", "Fun")
+    actions = [
+        {"WFWorkflowActionIdentifier": "is.workflow.actions.comment"},
+        {"WFWorkflowActionIdentifier": "is.workflow.actions.gettext"},
+        {"WFWorkflowActionIdentifier": "is.workflow.actions.showresult"},
+    ]
+    descriptions = {
+        "is.workflow.actions.gettext": "Creates static text.",
+        "is.workflow.actions.showresult": "Shows a result on screen.",
+    }
+    md = render_prompt(e, actions, descriptions)
+    assert "1. Creates static text." in md
+    assert "2. Shows a result on screen." in md
+    assert "3." not in md  # the comment was skipped, only 2 numbered steps
+    assert "**Install:**" in md
 
 
 def test_render_safety_lists_findings():

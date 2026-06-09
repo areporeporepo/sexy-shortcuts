@@ -1,0 +1,9 @@
+name: "Shortcut Smith"
+slug: shortcut-smith
+author: "Anh Nguyen"
+category: "Developer"
+source: "https://www.icloud.com/shortcuts/REPLACE_WITH_REAL_ID"
+description: "An agentic shortcut that builds shortcuts for you: describe what you want, it asks a model for a step-by-step recipe (in this repo's prompt format) and saves it to build or submit. Shortcuts making shortcuts."
+date_added: "2026-06-09"
+platforms: [ios, ipados, macos]
+tags: [developer, agentic, ai, generator, meta, anthropic]

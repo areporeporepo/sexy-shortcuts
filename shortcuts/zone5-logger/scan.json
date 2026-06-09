@@ -1,0 +1,25 @@
+{
+  "score": 50,
+  "tier": "yellow",
+  "badge": "yellow",
+  "findings": [
+    {
+      "id": "is.workflow.actions.gethealthsample",
+      "tier": "yellow",
+      "weight": 15,
+      "reason": "Reads Health data (e.g. heart rate)."
+    },
+    {
+      "id": "is.workflow.actions.base64encode",
+      "tier": "yellow",
+      "weight": 15,
+      "reason": "Base64-encodes data \u2014 common before sending a payload to a server."
+    },
+    {
+      "id": "is.workflow.actions.downloadurl",
+      "tier": "yellow",
+      "weight": 20,
+      "reason": "Sends a network request / downloads from a URL \u2014 possible exfiltration."
+    }
+  ]
+}
