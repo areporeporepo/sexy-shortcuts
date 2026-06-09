@@ -73,3 +73,11 @@ rules:
     tier: green
     weight: 0
     reason: "A non-executing comment."
+  - id: is.workflow.actions.url
+    tier: green
+    weight: 0
+    reason: "Defines a URL value (does not make a request by itself)."
+  - id: is.workflow.actions.openurl
+    tier: yellow
+    weight: 5
+    reason: "Opens a URL in the browser — a visible side effect, leaves the app."

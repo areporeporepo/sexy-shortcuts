@@ -1,0 +1,13 @@
+{
+  "score": 95,
+  "tier": "yellow",
+  "badge": "yellow",
+  "findings": [
+    {
+      "id": "is.workflow.actions.openurl",
+      "tier": "yellow",
+      "weight": 5,
+      "reason": "Opens a URL in the browser \u2014 a visible side effect, leaves the app."
+    }
+  ]
+}

@@ -10,7 +10,7 @@
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>WFCommentActionText</key>
-				<string>Hair Force One — summons a random iconic Craig Federighi line. 100% device-local, no network.</string>
+				<string>Blue Shirt Craig — shows a random absurd "fact" about Craig Federighi's legendary blue shirt, then opens a shopping search so you can dress like him. Device-local except for opening your browser at the end.</string>
 			</dict>
 		</dict>
 		<dict>
@@ -30,7 +30,7 @@
 							<key>Value</key>
 							<dict>
 								<key>string</key>
-								<string>"Can't innovate anymore, my ass." 🎤</string>
+								<string>Craig owns 47 identical blue shirts — one for every demo that didn't crash. 👕</string>
 								<key>attachmentsByRange</key>
 								<dict/>
 							</dict>
@@ -46,7 +46,7 @@
 							<key>Value</key>
 							<dict>
 								<key>string</key>
-								<string>Hair Force One, reporting for duty. ✈️🦱</string>
+								<string>The blue shirt has its own NDA. 🤐</string>
 								<key>attachmentsByRange</key>
 								<dict/>
 							</dict>
@@ -62,7 +62,7 @@
 							<key>Value</key>
 							<dict>
 								<key>string</key>
-								<string>It just works. (mostly. let me show you a demo.)</string>
+								<string>The shirt is blue because the build was green. 🟢</string>
 								<key>attachmentsByRange</key>
 								<dict/>
 							</dict>
@@ -78,7 +78,7 @@
 							<key>Value</key>
 							<dict>
 								<key>string</key>
-								<string>Good morning! ☀️ And yes — the hair is real.</string>
+								<string>That blue shirt has shipped more features than your last sprint. 🚀</string>
 								<key>attachmentsByRange</key>
 								<dict/>
 							</dict>
@@ -94,7 +94,7 @@
 							<key>Value</key>
 							<dict>
 								<key>string</key>
-								<string>Senior Vice President of Software Engineering… and vibes.</string>
+								<string>Hair Force One. Blue shirt. Zero bugs. (citation needed) ✈️</string>
 								<key>attachmentsByRange</key>
 								<dict/>
 							</dict>
@@ -110,7 +110,7 @@
 							<key>Value</key>
 							<dict>
 								<key>string</key>
-								<string>Craig.exe has entered the keynote. 🐻‍❄️</string>
+								<string>The shirt is machine-washable. The hair is not. 🦱</string>
 								<key>attachmentsByRange</key>
 								<dict/>
 							</dict>
@@ -131,6 +131,21 @@
 		<dict>
 			<key>WFWorkflowActionIdentifier</key>
 			<string>is.workflow.actions.showresult</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict/>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.url</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFURLActionURL</key>
+				<string>https://www.google.com/search?tbm=shop&amp;q=men%27s+royal+blue+crew+neck+t-shirt</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.openurl</string>
 			<key>WFWorkflowActionParameters</key>
 			<dict/>
 		</dict>
