@@ -93,3 +93,15 @@ rules:
     tier: yellow
     weight: 10
     reason: "Reads your reminders."
+  - id: is.workflow.actions.ask
+    tier: green
+    weight: 0
+    reason: "Asks you for input (device-local)."
+  - id: is.workflow.actions.date
+    tier: green
+    weight: 0
+    reason: "Gets a date (device-local)."
+  - id: is.workflow.actions.appendnote
+    tier: green
+    weight: 0
+    reason: "Appends text to one of your own Notes (device-local, no network)."
