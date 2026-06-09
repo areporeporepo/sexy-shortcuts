@@ -195,6 +195,31 @@ with a documented reason. The badge in the README is the screenshot-bait / socia
 - One-step contribution (just paste a link) lowers the contribution barrier to near zero.
 - `sexy-shortcuts` mirror = a second brand/funnel for free.
 
+### Distribution engine: TikTok + Instagram Reels (the primary growth channel)
+
+This is the strategy, not an afterthought. Shortcuts are **uniquely suited to short-form
+vertical video** in a way almost no developer project is: a useful shortcut is a complete,
+satisfying 15-second phone screen-recording. The viral loop:
+
+1. **Hook (0–3s):** a relatable pain ("Stop paying for an app that does THIS").
+2. **Payoff (3–12s):** screen-record the shortcut running on a real iPhone — instant, tactile.
+3. **CTA (12–15s):** "One tap to install — link in bio." Link goes to the repo / the shortcut's
+   iCloud link. Caption answers the inevitable *"is this a virus?"* with the 🟢 **safety score**.
+
+Why it compounds:
+- **Phone-native = native content.** No laptop, no terminal in frame — it looks like a normal
+  iPhone tip, which is exactly what the TikTok/IG algorithms reward.
+- **The safety badge is the differentiator made visible.** "The only shortcut repo that scores
+  every one for safety" is a one-line caption that builds trust and stands out.
+- **Each shortcut = one piece of content.** A repo of N shortcuts is a content calendar of N
+  videos. Contributions literally generate marketing material.
+- **Funnel:** TikTok/IG Reels → bio link → GitHub repo → ⭐ + new contributors → more shortcuts
+  → more videos. The repo and the social channels feed each other.
+
+> Out of scope for the *codebase*, but part of the strategy: a lightweight `MARKETING.md` /
+> content playbook can capture hooks, formats, and a posting cadence. The repo's job is to make
+> each shortcut trivially demoable and trustworthy; the channels do the distribution.
+
 ## 8. Error Handling
 
 - `decompile.py`: iCloud ID not found / API shape changed / not a valid plist → fail the PR
