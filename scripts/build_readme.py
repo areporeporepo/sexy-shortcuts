@@ -100,7 +100,11 @@ def render_readme(entries):
         "",
         "The safety-rated app store for Apple Shortcuts. Every shortcut is decompiled and",
         "scored for safety — each score reflects what a shortcut *can do*, not proof of intent.",
-        "See [Why Shortcuts?](docs/why-shortcuts.md) for the privacy/security case.",
+        "",
+        "More private than running an agent: no resident process, no credentials to leak, "
+        "**no sandbox VM needed** (OpenClaw · NemoClaw · Hermes · OpenShell all require one) — "
+        "Shortcuts runs on-device behind Apple's permission prompts, so the OS *is* the sandbox. "
+        "See [Why Shortcuts?](docs/why-shortcuts.md) for the full privacy/security case.",
         "",
         "**Every entry installs in one tap from a real Apple iCloud link** — no clicking",
         "through to another repo. Browse, check the safety score, tap Install.",

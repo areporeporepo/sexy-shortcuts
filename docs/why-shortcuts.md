@@ -45,6 +45,29 @@ not beat coding agents at their job. Two layers: agents *think and plan*; Shortc
 Alongside that, a good shortcut outright **replaces** a pile of single-purpose utility apps
 and risky one-off scripts. Complements your agents, replaces your junk apps.
 
+## Safer, more personal, and zero-setup vs. agent frameworks
+
+Agent frameworks — OpenClaw, NemoClaw, Hermes-style agents, and the sandboxed runtimes like
+OpenShell they run inside — are powerful, but their power comes from running a **resident
+process with broad access** to a machine. That is *why* they need a sandbox VM/container in
+the first place: you have to wrap an autonomous, credential-holding process to contain what
+it might do. Shortcuts inverts the whole model.
+
+| | Agent frameworks (OpenClaw · NemoClaw · Hermes · OpenShell) | Apple Shortcuts |
+| --- | --- | --- |
+| Where it runs | A resident process, usually inside a sandbox VM/container | On-device, first-party — **no sandbox needed; the OS is the sandbox** |
+| Trust boundary | "can do anything you can" — must be externally contained | Apple's per-action permission prompts, on every run |
+| Setup | Runtime, keys, sandbox environment to stand up | Zero — built into iOS 27 / macOS 27 / watchOS 27 |
+| Your data | Flows through the agent's process/credentials | Stays on your device; each grant is explicit and revocable |
+| Personalization | Configured per agent | Bound to **your** device, **your** Health/Calendar/Photos, **your** permissions |
+| Best at | Open-ended reasoning, coding, long autonomous tasks | Fast, safe, repeatable, deeply personal on-device actions |
+
+So for the lane it's built for — *"do this with my data, on my phone, safely, every time"* —
+Shortcuts is **more secure, more private, and more personal** than any agent framework,
+because there's no autonomous process and no machine to expose. **Honest boundary (again):**
+this is not a claim that Shortcuts out-reasons agents — it doesn't. They *think*; Shortcuts
+*acts*, privately. Use both: the agent plans, the shortcut executes on-device.
+
 ## Why this repo
 
 Shortcuts' one residual risk is a shortcut that *abuses* the permissions you granted it —
