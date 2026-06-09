@@ -105,16 +105,18 @@ def render_readme(entries):
         "**no sandbox VM needed** (OpenClaw · NemoClaw · Hermes · OpenShell all require one) — "
         "Shortcuts runs on-device behind Apple's permission prompts, so the OS *is* the sandbox.",
         "",
-        "It works *with* Siri AI, not against it: **Siri** runs your shortcuts by voice, "
-        "**Apple Intelligence** powers their reasoning on-device (the \"Use Model\" action), "
-        "and you keep full custom control.",
+        "It works *with* Siri AI, not against it: **Siri** runs your shortcuts by voice, the "
+        "**Apple Foundation Models** (`AFM 3 Core`, via the Foundation Models framework) power "
+        "their reasoning on-device through the **Use Model** action, and you keep full custom control.",
         "",
-        "Because that reasoning runs on-device or via **Apple Private Cloud Compute** — "
-        "*stateless computation, no privileged runtime access, non-targetability,* and "
-        "*verifiable transparency* "
-        "([Apple Security, June 2026](https://security.apple.com/blog/expanding-pcc/)) — even "
-        "**high-risk data** (health, location, private notes, and enterprise **IP**) is safe to "
-        "feed an agent here. Same architecture, personal or enterprise. "
+        "Apple's models *\"run exclusively on-device and on Private Cloud Compute,\"* and Apple "
+        "*\"do not use users' private personal data or user interactions when training\"* them "
+        "([Apple, June 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)). "
+        "On Private Cloud Compute, *user data is never stored or shared with anyone, including Apple* — "
+        "*stateless computation, non-targetability, verifiable transparency* "
+        "([Apple Security, June 2026](https://security.apple.com/blog/expanding-pcc/)). So even "
+        "**high-risk data** (health, location, private notes, enterprise **IP**) is safe to feed an "
+        "agent here — same architecture, personal or enterprise. "
         "See [Why Shortcuts?](docs/why-shortcuts.md) for the full privacy/security case.",
         "",
         "**Every entry installs in one tap from a real Apple iCloud link** — no clicking",

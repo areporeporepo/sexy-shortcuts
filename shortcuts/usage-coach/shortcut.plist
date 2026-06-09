@@ -22,9 +22,10 @@ HONEST BOUNDARY: iOS exposes NO Screen Time / app-usage data to Shortcuts — so
 off a screenshot YOU take. The shortcut never silently watches your usage. And it doesn't
 "learn" by itself: it logs plans; YOU review them. That's the real self-improving loop.
 
-SETUP: put your model endpoint + key in "Get Contents of URL", OR on iOS 27 swap it for the
-on-device "Use Model" action (private, no network, no key). Pair it with the Self-review
-habit — run it weekly.</string>
+SETUP: for the reasoning step, use the on-device Apple Foundation Models via the Use Model
+action — the natively multimodal AFM 3 Core Advanced (Foundation Models framework) can read
+the screenshot privately, no network and no key — or put a third-party model endpoint + key
+in "Get Contents of URL". Pair it with the self-review habit — run it weekly.</string>
 			</dict>
 		</dict>
 		<dict>

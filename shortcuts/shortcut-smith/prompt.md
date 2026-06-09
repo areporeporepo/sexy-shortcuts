@@ -4,7 +4,7 @@
 > always matches what the shortcut really does. Read it before you install — or hand
 > it to your own agent to rebuild the shortcut from scratch.
 
-An agentic shortcut that builds shortcuts for you: describe what you want, it asks a model for a step-by-step recipe (in this repo's prompt format) and saves it to build or submit. Shortcuts making shortcuts.
+An agentic shortcut that builds shortcuts for you: describe what you want, it asks an on-device Apple Foundation Model (AFM 3 Core, via the Use Model action) for a step-by-step recipe in this repo's prompt format, and saves it to build or submit. Shortcuts making shortcuts.
 
 ## Steps
 

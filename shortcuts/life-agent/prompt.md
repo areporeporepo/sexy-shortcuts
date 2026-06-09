@@ -4,7 +4,7 @@
 > always matches what the shortcut really does. Read it before you install — or hand
 > it to your own agent to rebuild the shortcut from scratch.
 
-One personal agent that fuses the signals only Shortcuts can read — heart rate, calendar, location, Focus, battery — and asks a model what to do next. A cloud agent can read none of these; this is the device-only moat. Reads a lot, so it scores low on purpose: you see everything it touches.
+One personal agent that fuses the signals only Shortcuts can read — heart rate, calendar, location, Focus, battery — and asks an on-device Apple Foundation Model (AFM 3 Core) what to do next. A cloud agent can read none of these; this is the device-only moat. Reads a lot, so it scores low on purpose: you see everything it touches.
 
 ## Steps
 

@@ -32,9 +32,10 @@ MORE CUSTOMIZABLE THAN SIRI / APPLE INTELLIGENCE: Siri does what Apple ships. Th
 YOU wire — your memory file, your model, your logic, your data flow — and you can still
 trigger it by saying "Hey Siri." It extends Siri instead of being limited by it.
 
-SETUP: create agent-memory.md in iCloud Drive; point the file actions at it; put your model
-endpoint/key in "Get Contents of URL" (or use the on-device "Use Model" action on iOS 27);
-add a weekly Automation to run it.</string>
+SETUP: create agent-memory.md in iCloud Drive; point the file actions at it. For the
+reasoning step, use the on-device Apple Foundation Models via the Use Model action — AFM 3
+Core (Foundation Models framework), no network and no API key — or put a third-party model
+endpoint/key in "Get Contents of URL". Add a weekly Automation to run it.</string>
 			</dict>
 		</dict>
 		<dict>

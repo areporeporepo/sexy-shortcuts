@@ -4,7 +4,7 @@
 > always matches what the shortcut really does. Read it before you install — or hand
 > it to your own agent to rebuild the shortcut from scratch.
 
-A scheduled memory-loop: reads a growing memory file, asks a model what to improve and what to build next, appends the learning back. The system self-improves over runs. More customizable than Siri — it does what you wire.
+A scheduled memory-loop: reads a growing memory file, asks an on-device Apple Foundation Model (AFM 3 Core) what to improve and what to build next, appends the learning back. The system self-improves over runs. More customizable than Siri — it does what you wire.
 
 ## Steps
 

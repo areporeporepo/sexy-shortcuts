@@ -78,15 +78,17 @@ But this isn't Shortcuts *vs.* Siri — they **complement each other**, in both 
 
 - **Siri runs your shortcuts.** Say "Hey Siri, <name>" and your custom flow executes —
   Siri becomes the voice front-end to anything you build.
-- **Your shortcuts use Apple Intelligence.** The on-device **"Use Model"** action lets a
-  shortcut call Apple's private, on-device model — so the agents in this repo can run their
-  reasoning step with *zero network and no API key*, fully inside Apple Intelligence.
+- **Your shortcuts use the Apple Foundation Models.** Via the **Use Model** action — backed
+  by the **Foundation Models framework** — a shortcut can run its reasoning step on
+  **`AFM 3 Core`** (Apple's 3-billion-parameter on-device model) or the natively multimodal
+  **`AFM 3 Core Advanced`**, so the agents in this repo run *on-device, with zero network and
+  no API key*. ([Apple, "Introducing the Third Generation of Apple's Foundation Models," June 8 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models))
 - **Siri suggests your shortcuts** at the right moment based on context.
 
-So the stack is: **Apple Intelligence provides the on-device brains, Siri provides the
-voice, and Shortcuts provide the custom, permissioned hands.** You get more customization
-than Siri alone could ever offer, while staying inside the same on-device, permissioned
-sandbox — none of the exposure of running your own agent.
+So the stack, in Apple's terms: the **Apple Foundation Models** provide the on-device brains,
+**Siri** provides the voice, and **Shortcuts** provide the custom, permissioned hands. You
+get more customization than Siri alone could offer, while staying inside the same on-device,
+permissioned sandbox — none of the exposure of running your own agent.
 
 ## High-risk data — personal *and* IP — is safe to use (Apple Private Cloud Compute)
 
@@ -98,9 +100,14 @@ someone else's servers and terms, with the real risk it's retained or used to tr
 That single fear is why most people — and nearly every enterprise — *won't* let AI touch
 their high-risk data.
 
-Apple's answer — a centerpiece of Apple Intelligence's privacy story — is **Private Cloud
-Compute (PCC)**. When a request needs more than the on-device model, it escalates to a
-hardened PCC node built on five stated, **cryptographically verifiable** requirements
+Apple's answer is its model architecture itself. In Apple's words, the Apple Foundation
+Models *"run exclusively on-device and on Private Cloud Compute,"* and *"we do not use our
+users' private personal data or user interactions when training our foundation models"*
+([Apple, Third Generation of Apple's Foundation Models, June 8 2026](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models)).
+When a request needs more than the on-device model, it escalates to a hardened **Private
+Cloud Compute (PCC)** node — where, per Apple, *"user data is never stored or shared with
+anyone, including Apple"* — built on five stated, **cryptographically verifiable**
+requirements
 ([Apple Security, "Expanding Private Cloud Compute," June 8 2026](https://security.apple.com/blog/expanding-pcc/)):
 
 - **stateless computation** — your data is unreachable once the request completes and is

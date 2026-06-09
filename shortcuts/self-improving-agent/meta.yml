@@ -3,7 +3,7 @@ slug: self-improving-agent
 author: "Anh Nguyen"
 category: "Developer"
 source: "https://www.icloud.com/shortcuts/REPLACE_WITH_REAL_ID"
-description: "A scheduled memory-loop: reads a growing memory file, asks a model what to improve and what to build next, appends the learning back. The system self-improves over runs. More customizable than Siri — it does what you wire."
+description: "A scheduled memory-loop: reads a growing memory file, asks an on-device Apple Foundation Model (AFM 3 Core) what to improve and what to build next, appends the learning back. The system self-improves over runs. More customizable than Siri — it does what you wire."
 date_added: "2026-06-09"
 platforms: [ios, macos]
 tags: [developer, agentic, ai, self-improving, memory-loop, automation, anthropic]
