@@ -135,10 +135,24 @@ The same properties make this an enterprise story, not just a personal one:
 - **Managed distribution exists.** Apple Business Manager / MDM can push and lock down
   shortcuts to managed devices, so an org controls which automations employees can run.
 
+**The clearest fit is the highest-IP tier** — semiconductor and deep-tech R&D (ASML, NVIDIA,
+TSMC-class). Their IP is existential, so they categorically can't paste it into a cloud
+chatbot or run a credential-holding cloud agent against it. For the part of a researcher's
+work that lives on Apple devices, a Shortcuts agent flips that: the data and the reasoning
+both stay on the device.
+
+The key nuance for them: the **on-device "Use Model" path makes no network call at all** —
+local IP in, local model, local answer. That's compatible with the most locked-down,
+egress-restricted environments, where even Apple's Private Cloud Compute (which requires
+network egress to Apple) might be disallowed. Pair that with MDM-locked shortcuts and the
+per-shortcut safety score — security can audit every automation before it ships to the fleet —
+and you have AI working on world-class IP with **zero data leaving the device**.
+
 The honest scope: this is a *privacy and trust architecture* that fits enterprise, not a
-turnkey enterprise product — an org still owns its own distribution, model endpoints, and
-policy. But the hard part enterprises can't get from a cloud agent — "let AI work on our IP
-without our IP leaking" — is exactly what on-device + PCC provides.
+turnkey enterprise product — an org still owns its distribution, model endpoints, and policy,
+and the core EDA/CAD workflows on Linux farms aren't Apple devices. But for the Apple-device
+surface of those teams, the hard part a cloud agent can't deliver — "let AI work on our IP
+without our IP leaving the device" — is exactly what the on-device path provides.
 
 ## Why this repo
 
