@@ -88,6 +88,36 @@ voice, and Shortcuts provide the custom, permissioned hands.** You get more cust
 than Siri alone could ever offer, while staying inside the same on-device, permissioned
 sandbox — none of the exposure of running your own agent.
 
+## High-risk personal data is safe to use — Apple Private Cloud Compute
+
+The agents in this repo read your most sensitive data — heart rate, sleep, location,
+calendar, your private notes. Hand that to a cloud agent or a third-party AI API and you're
+trusting someone else's servers and terms, with the real risk it's retained or used to train
+a model. That's the exact reason most people *won't* let AI touch their high-risk personal
+data.
+
+Apple's answer — a centerpiece of Apple Intelligence's privacy story and reaffirmed at WWDC
+— is **Private Cloud Compute (PCC)**. When a request needs more than the on-device model, it
+escalates to Apple-silicon servers running a hardened OS where, per Apple's stated and
+**cryptographically verifiable** guarantees:
+
+- your data is **never stored** and is unreachable once the request completes (stateless),
+- it is **never used to train** any model,
+- **not even Apple** can access it, and
+- the build is **open to independent security inspection**.
+
+That is what makes a Shortcuts-based agent uniquely safe for **high-risk personal data**: the
+reasoning step runs on-device, or escalates to PCC — either way your health, location, and
+private notes stay private and untrained-on. This is data you'd never paste into a chatbot;
+here you can, because it never leaves Apple's privacy boundary.
+
+> Honest caveat (and why the safety score matters): this guarantee covers **Apple
+> Intelligence** (on-device + PCC). If you instead wire a shortcut to a third-party AI API
+> — like the example `api.anthropic.com` calls in this repo's agent shortcuts — that data
+> goes to that provider under *their* terms, not PCC's. So for high-risk personal data,
+> prefer the on-device **"Use Model"** action. The safety scanner flags every network call,
+> so you always know which path a shortcut takes before you run it.
+
 ## Why this repo
 
 Shortcuts' one residual risk is a shortcut that *abuses* the permissions you granted it —

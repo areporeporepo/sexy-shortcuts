@@ -7,7 +7,9 @@ scored for safety — each score reflects what a shortcut *can do*, not proof of
 
 More private than running an agent: no resident process, no credentials to leak, **no sandbox VM needed** (OpenClaw · NemoClaw · Hermes · OpenShell all require one) — Shortcuts runs on-device behind Apple's permission prompts, so the OS *is* the sandbox.
 
-It works *with* Siri AI, not against it: **Siri** runs your shortcuts by voice, **Apple Intelligence** powers their reasoning on-device (the "Use Model" action), and you keep full custom control. See [Why Shortcuts?](docs/why-shortcuts.md) for the full privacy/security case.
+It works *with* Siri AI, not against it: **Siri** runs your shortcuts by voice, **Apple Intelligence** powers their reasoning on-device (the "Use Model" action), and you keep full custom control.
+
+Because that reasoning runs on-device or via **Apple Private Cloud Compute** — never stored, never used for training, cryptographically verifiable — even **high-risk personal data** (health, location, private notes) is safe to feed an agent here. See [Why Shortcuts?](docs/why-shortcuts.md) for the full privacy/security case.
 
 **Every entry installs in one tap from a real Apple iCloud link** — no clicking
 through to another repo. Browse, check the safety score, tap Install.
