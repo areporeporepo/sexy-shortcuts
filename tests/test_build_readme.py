@@ -1,4 +1,4 @@
-from scripts.build_readme import render_readme, render_safety
+from scripts.build_readme import render_readme, render_safety, platform_badges
 
 
 def _entry(slug, name, score, tier, category):
@@ -18,6 +18,19 @@ def test_render_readme_sorts_by_score_desc_and_shows_badges():
     assert md.index("Bravo") < md.index("Alpha")
     assert "🟢" in md and "🟡" in md
     assert "| Score |" in md
+
+
+def test_platform_badges_orders_and_defaults():
+    assert platform_badges({"platforms": ["watchos", "ios"]}) == "📱 ⌚"
+    assert platform_badges({}) == "📱"  # default iOS when unspecified
+
+
+def test_render_readme_shows_platform_column():
+    e = _entry("a", "Alpha", 90, "green", "Fun")
+    e["platforms"] = ["ios", "macos", "watchos"]
+    md = render_readme([e])
+    assert "| Runs on |" in md
+    assert "📱 💻 ⌚" in md
 
 
 def test_render_safety_lists_findings():

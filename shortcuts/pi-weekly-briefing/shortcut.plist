@@ -10,13 +10,12 @@
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>WFCommentActionText</key>
-				<string>PI Morning Driver — a personalized research-lab morning briefing.
+				<string>PI Weekly Briefing — a personalized research-lab weekly briefing. Run it every Monday (or set a weekly Automation: Shortcuts ▸ Automation ▸ Time of Day ▸ Weekly).
 
 WHAT IT DOES (all accessible to Shortcuts):
-  • Reads today's calendar events
-  • Reads current weather for your commute
-  • Pulls newest arXiv papers in your field (CUSTOMIZE the category below)
-  • Assembles everything into one briefing
+  • Reads the week's calendar events
+  • Pulls the latest arXiv papers in your field (CUSTOMIZE the category below)
+  • Assembles everything into one weekly briefing
   • Deep-links you into Slack + email + Zoom for fast triage
 
 HONEST BOUNDARY: Shortcuts cannot read your Slack/Gmail message CONTENT or act inside
@@ -33,14 +32,8 @@ field, e.g. cond-mat, hep-ex, q-bio), and your Slack workspace deep link.</strin
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>WFGetUpcomingItemCount</key>
-				<integer>5</integer>
+				<integer>15</integer>
 			</dict>
-		</dict>
-		<dict>
-			<key>WFWorkflowActionIdentifier</key>
-			<string>is.workflow.actions.getweatherconditions</string>
-			<key>WFWorkflowActionParameters</key>
-			<dict/>
 		</dict>
 		<dict>
 			<key>WFWorkflowActionIdentifier</key>
@@ -48,7 +41,7 @@ field, e.g. cond-mat, hep-ex, q-bio), and your Slack workspace deep link.</strin
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>WFURL</key>
-				<string>http://export.arxiv.org/api/query?search_query=cat:physics.acc-ph&amp;sortBy=submittedDate&amp;sortOrder=descending&amp;max_results=5</string>
+				<string>http://export.arxiv.org/api/query?search_query=cat:physics.acc-ph&amp;sortBy=submittedDate&amp;sortOrder=descending&amp;max_results=10</string>
 				<key>WFHTTPMethod</key>
 				<string>GET</string>
 			</dict>
@@ -59,7 +52,7 @@ field, e.g. cond-mat, hep-ex, q-bio), and your Slack workspace deep link.</strin
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>Text</key>
-				<string>☀️ Good morning, PI. Here's your lab briefing — calendar, weather, and the latest arXiv in your field. Tap through to triage Slack and email below.</string>
+				<string>📅 Your week, PI. Here's the week ahead on your calendar plus this week's newest arXiv in your field. Tap through to triage Slack and email below.</string>
 			</dict>
 		</dict>
 		<dict>

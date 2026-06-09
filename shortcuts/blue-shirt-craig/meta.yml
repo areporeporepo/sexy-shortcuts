@@ -5,4 +5,5 @@ category: "Fun"
 source: "https://www.icloud.com/shortcuts/REPLACE_WITH_REAL_ID"
 description: "A random absurd fact about Craig Federighi's legendary blue shirt — then offers to find you one. 👕✈️"
 date_added: "2026-06-09"
+platforms: [ios, ipados, macos]
 tags: [fun, meme, apple, federighi, blue-shirt]

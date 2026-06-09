@@ -7,7 +7,19 @@ from pathlib import Path
 import yaml
 
 BADGE = {"green": "🟢", "yellow": "🟡", "red": "🔴"}
+PLATFORM = {"ios": "📱", "macos": "💻", "watchos": "⌚", "ipados": "📱"}
 ROOT = Path(__file__).parents[1]
+
+
+def platform_badges(entry):
+    """Render an entry's platforms as emoji, in a stable order. Defaults to iOS."""
+    plats = entry.get("platforms") or ["ios"]
+    order = ["ios", "ipados", "macos", "watchos"]
+    badges = []
+    for p in order:
+        if p in plats and PLATFORM[p] not in badges:
+            badges.append(PLATFORM[p])
+    return " ".join(badges) or "📱"
 
 
 def render_safety(entry):
@@ -38,14 +50,17 @@ def render_readme(entries):
         "scored for safety — each score reflects what a shortcut *can do*, not proof of intent.",
         "See [Why Shortcuts?](docs/why-shortcuts.md) for the privacy/security case.",
         "",
-        "| Safety | Score | Shortcut | Category | What it does |",
-        "| :----: | :---: | -------- | -------- | ------------ |",
+        "Runs on: 📱 iOS · 💻 macOS · ⌚ watchOS",
+        "",
+        "| Safety | Score | Shortcut | Category | Runs on | What it does |",
+        "| :----: | :---: | -------- | -------- | :-----: | ------------ |",
     ]
     for e in rows:
         s = e["scan"]
         out.append(
             f"| {BADGE[s['badge']]} | {s['score']} | "
-            f"[{e['name']}](shortcuts/{e['slug']}/) | {e['category']} | {e['description']} |"
+            f"[{e['name']}](shortcuts/{e['slug']}/) | {e['category']} | "
+            f"{platform_badges(e)} | {e['description']} |"
         )
     return "\n".join(out) + "\n"
 

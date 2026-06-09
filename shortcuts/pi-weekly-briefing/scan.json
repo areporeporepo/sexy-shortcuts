@@ -1,5 +1,5 @@
 {
-  "score": 50,
+  "score": 60,
   "tier": "yellow",
   "badge": "yellow",
   "findings": [
@@ -8,12 +8,6 @@
       "tier": "yellow",
       "weight": 15,
       "reason": "Reads your calendar events."
-    },
-    {
-      "id": "is.workflow.actions.getweatherconditions",
-      "tier": "yellow",
-      "weight": 10,
-      "reason": "Reads weather for your current location."
     },
     {
       "id": "is.workflow.actions.downloadurl",
