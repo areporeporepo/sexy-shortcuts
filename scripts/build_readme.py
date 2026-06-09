@@ -11,6 +11,15 @@ PLATFORM = {"ios": "📱", "macos": "💻", "watchos": "⌚", "ipados": "📱"}
 ROOT = Path(__file__).parents[1]
 
 
+def install_link(entry):
+    """A one-tap Apple iCloud install link — but only when the entry has a real link,
+    never for the REPLACE_WITH_REAL_ID placeholder (no dead install buttons)."""
+    src = entry.get("source", "")
+    if "icloud.com/shortcuts/" in src and "REPLACE" not in src:
+        return f"[⬇️ Install]({src})"
+    return "—"
+
+
 def platform_badges(entry):
     """Render an entry's platforms as emoji, in a stable order. Defaults to iOS."""
     plats = entry.get("platforms") or ["ios"]
@@ -50,16 +59,19 @@ def render_readme(entries):
         "scored for safety — each score reflects what a shortcut *can do*, not proof of intent.",
         "See [Why Shortcuts?](docs/why-shortcuts.md) for the privacy/security case.",
         "",
+        "**Every entry installs in one tap from a real Apple iCloud link** — no clicking",
+        "through to another repo. Browse, check the safety score, tap Install.",
+        "",
         "Runs on: 📱 iOS · 💻 macOS · ⌚ watchOS",
         "",
-        "| Safety | Score | Shortcut | Category | Runs on | What it does |",
-        "| :----: | :---: | -------- | -------- | :-----: | ------------ |",
+        "| Safety | Score | Shortcut | Install | Category | Runs on | What it does |",
+        "| :----: | :---: | -------- | :-----: | -------- | :-----: | ------------ |",
     ]
     for e in rows:
         s = e["scan"]
         out.append(
             f"| {BADGE[s['badge']]} | {s['score']} | "
-            f"[{e['name']}](shortcuts/{e['slug']}/) | {e['category']} | "
+            f"[{e['name']}](shortcuts/{e['slug']}/) | {install_link(e)} | {e['category']} | "
             f"{platform_badges(e)} | {e['description']} |"
         )
     return "\n".join(out) + "\n"

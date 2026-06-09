@@ -1,4 +1,4 @@
-from scripts.build_readme import render_readme, render_safety, platform_badges
+from scripts.build_readme import render_readme, render_safety, platform_badges, install_link
 
 
 def _entry(slug, name, score, tier, category):
@@ -31,6 +31,21 @@ def test_render_readme_shows_platform_column():
     md = render_readme([e])
     assert "| Runs on |" in md
     assert "📱 💻 ⌚" in md
+
+
+def test_install_link_real_vs_placeholder():
+    real = "https://www.icloud.com/shortcuts/abc123"
+    assert install_link({"source": real}) == f"[⬇️ Install]({real})"
+    assert install_link({"source": "https://www.icloud.com/shortcuts/REPLACE_WITH_REAL_ID"}) == "—"
+    assert install_link({}) == "—"
+
+
+def test_render_readme_has_install_column():
+    e = _entry("a", "Alpha", 90, "green", "Fun")
+    e["source"] = "https://www.icloud.com/shortcuts/realid123"
+    md = render_readme([e])
+    assert "| Install |" in md
+    assert "[⬇️ Install](https://www.icloud.com/shortcuts/realid123)" in md
 
 
 def test_render_safety_lists_findings():
