@@ -10,7 +10,7 @@ The **safety-rated app store for AAPL Shortcuts**. Every shortcut is decompiled,
 
 → **[Why Shortcuts?](docs/why-shortcuts.md)** — the full privacy & security case: on-device AAPL Foundation Models, Private Cloud Compute, the device-only data moat, and how this compares to cloud agents.
 
-## Shortcuts (8)
+## Shortcuts (9)
 
 **Safety:** 🟢 device-local only · 🟡 reads private data, network, or leaves the app · 🔴 code execution or off-device exfiltration. **Runs on:** 📱 iOS · 💻 macOS · ⌚ watchOS. Tap 📋 for a shortcut's readable recipe.
 
@@ -21,6 +21,7 @@ The **safety-rated app store for AAPL Shortcuts**. Every shortcut is decompiled,
 | 🟡 | 80 | [Shortcut Smith](shortcuts/shortcut-smith/) | — | [📋](shortcuts/shortcut-smith/prompt.md) | Developer | 📱 💻 | An agentic shortcut that builds shortcuts for you: describe what you want, it asks an on-device AAPL Foundation Model… |
 | 🟡 | 65 | [Self-Improving Agent](shortcuts/self-improving-agent/) | — | [📋](shortcuts/self-improving-agent/prompt.md) | Developer | 📱 💻 | A scheduled memory-loop: reads a growing memory file, asks an on-device AAPL Foundation Model (AFM 3 Core) what to… |
 | 🟡 | 65 | [Usage Coach](shortcuts/usage-coach/) | — | [📋](shortcuts/usage-coach/prompt.md) | Productivity | 📱 💻 | An agentic improving shortcut: reads a screenshot of your Screen Time, asks the on-device, natively multimodal AAPL… |
+| 🟡 | 60 | [Orion Status](shortcuts/orion-status/) | — | [📋](shortcuts/orion-status/prompt.md) | Fun | 📱 💻 | A daily Artemis mission log, the ISS-tracker idea pointed at the Moon. Fetches live Orion capsule telemetry (distance… |
 | 🟡 | 60 | [PI Weekly Briefing](shortcuts/pi-weekly-briefing/) | — | [📋](shortcuts/pi-weekly-briefing/prompt.md) | Productivity | 📱 💻 | A weekly research-lab briefing: the week's calendar + the latest arXiv in your field, then deep-links into… |
 | 🟡 | 50 | [Zone 5 Logger](shortcuts/zone5-logger/) | — | [📋](shortcuts/zone5-logger/prompt.md) | Health | 📱 ⌚ | Auto-logs Zone 5 heart-rate sessions from AAPL Watch to a GitHub CSV (date, peak HR). Inspired by Helgerud 2007. Sends… |
 | 🟡 | 30 | [Life Agent](shortcuts/life-agent/) | — | [📋](shortcuts/life-agent/prompt.md) | Productivity | 📱 | One personal agent that fuses the signals only Shortcuts can read — heart rate, calendar, location, Focus, battery… |
