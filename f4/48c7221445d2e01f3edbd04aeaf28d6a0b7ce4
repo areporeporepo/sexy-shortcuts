@@ -1,0 +1,60 @@
+.github/PULL_REQUEST_TEMPLATE.md
+  s_c605094134b65f::t_4d040376f8d6e1 1-26
+shortcuts/shortcut-smith/shortcut.plist
+  s_c605094134b65f::t_e41a240470dc63 13,15-21,23-26,28-30,35,38-39,44,47-50,55,57-60,68,77
+shortcuts/shortcut-smith/SAFETY.md
+  s_c605094134b65f::t_5e5d733ca5b828 1,3,7-8
+shortcuts/show-clipboard/prompt.md
+  s_c605094134b65f::t_5e5d733ca5b828 1-14
+scripts/build_readme.py
+  s_c605094134b65f::t_1e01e6cf6c46a8 5,13-51
+  s_c605094134b65f::t_55a4fd3d3020c7 110-114,120-121
+  s_c605094134b65f::t_1f30ec35a79bcc 140,142-146
+shortcuts/pi-weekly-briefing/prompt.md
+  s_c605094134b65f::t_5e5d733ca5b828 1-17
+shortcuts/zone5-logger/SAFETY.md
+  s_c605094134b65f::t_5e5d733ca5b828 1-10
+shortcuts/zone5-logger/shortcut.plist
+  s_c605094134b65f::t_635693d592f754 1-80
+tests/test_build_readme.py
+  s_c605094134b65f::t_b8bced55e28f06 1-3
+  s_c605094134b65f::t_39bbd74a8ccf00 53-70
+scripts/risk_rules.yml
+  s_c605094134b65f::t_6685bb5c33c16a 108-119
+shortcuts/blue-shirt-craig/prompt.md
+  s_c605094134b65f::t_5e5d733ca5b828 1-17
+AGENTS.md
+  s_c605094134b65f::t_43ad730e534fb4 1-45
+shortcuts/shortcut-smith/meta.yml
+  s_c605094134b65f::t_6734702f31e8e9 1-2,4,6,8-9
+shortcuts/shortcut-smith/scan.json
+  s_c605094134b65f::t_5e5d733ca5b828 2-12
+shortcuts/zone5-logger/meta.yml
+  s_c605094134b65f::t_f4e53f8cb01ba9 1-9
+shortcuts/zone5-logger/prompt.md
+  s_c605094134b65f::t_5e5d733ca5b828 1-17
+shortcuts/zone5-logger/scan.json
+  s_c605094134b65f::t_5e5d733ca5b828 1-25
+README.md
+  s_c605094134b65f::t_5e5d733ca5b828 16-25
+shortcuts/shortcut-smith/prompt.md
+  s_c605094134b65f::t_5e5d733ca5b828 1-17
+CONTRIBUTING.md
+  s_c605094134b65f::t_b5c30e7e294bbd 3-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f448c7221445d2e01f3edbd04aeaf28d6a0b7ce4",
+  "prompts": {},
+  "sessions": {
+    "s_c605094134b65f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "347e7bc1-aa66-4bb4-884b-198a4aa57b43",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "anh nguyen <anh.nqqq@icloud.com>"
+    }
+  }
+}
